@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour {
     [Header("Properties")]
     public float speed = 1.5f;
     public float sensitivity = 0.025f;
-    public const float gravity = 9.81f;
+    public const float gravity = -9.81f;
     public float jump = 5f;
 
     // Variables
@@ -47,10 +47,11 @@ public class Movement : MonoBehaviour {
         transform.eulerAngles = new Vector3(0f, rotation.y, 0f) * sensitivity;
     }
 
-    void ApplyMovement(){
-        // Movement
-        Vector2 move = Controls.Movement.GetAxis(speed); 
-        vel = this.transform.forward * move.y;
+    void ApplyPhysics(){
+        Debug.Log(cont.isGrounded);
+
+        // Gravity
+        vel.y += gravity * Time.deltaTime;
 
         // Apply
         cont.Move(vel * Time.deltaTime);
@@ -58,18 +59,36 @@ public class Movement : MonoBehaviour {
         // Gravity
         // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
         if (cont.isGrounded){
+            // Reset gravity
             vel.y = 0f;
 
-            if (Controls.Movement.GetJump()){
-                vel.y += -jump;
-            }
-        } 
+            // Movement
+            Vector2 move = Controls.Movement.GetAxis(speed); 
 
-        vel.y += -gravity * Time.deltaTime;
+            // Coming to a stop
+            if (move.x != 0f || move.y != 0f){
+                vel = new Vector3(
+                    this.transform.forward.x * move.y,
+                    vel.y,
+                    this.transform.forward.z * move.y
+                );
+            } else {
+                vel = new Vector3(
+                    0f,
+                    0f,
+                    0f
+                );
+            }
+
+            // Jump
+            if (Controls.Movement.GetJump()){
+                vel.y += jump;
+            }
+        }
     }
 
     void Update(){
         ApplyRotation();
-        ApplyMovement();
+        ApplyPhysics();
     }
 }
