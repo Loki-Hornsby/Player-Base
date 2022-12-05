@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour {
     // References
     [Header("References")]
     public GameObject head;
+    public Animation anim;
     CharacterController cont;
     
     // Properties
@@ -65,14 +66,17 @@ public class Movement : MonoBehaviour {
             // Movement
             Vector2 move = Controls.Movement.GetAxis(speed); 
 
-            // Coming to a stop
             if (!(move.x == 0f && move.y == 0f)){
+                anim.Move();
+
                 vel = new Vector3(
                     (this.transform.forward.x * move.y) + (this.transform.right.x * move.x),
                     vel.y,
                     (this.transform.forward.z * move.y) + (this.transform.right.z * move.x)
                 );
-            } else {
+            } else { // Coming to a idle
+                anim.Idle();
+
                 vel = new Vector3(
                     0f,
                     0f,
@@ -82,6 +86,8 @@ public class Movement : MonoBehaviour {
 
             // Jump
             if (Controls.Movement.GetJump()){
+                anim.Jump();
+
                 vel.y += jump;
             }
         }

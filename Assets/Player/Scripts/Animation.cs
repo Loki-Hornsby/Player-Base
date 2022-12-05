@@ -2,17 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animation : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Animation : MonoBehaviour {
+    public enum States {
+        Idle,
+        Jumping,
+        Falling,
+        Moving,
+        Sprinting,
+        Crouching
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public States state;
+
+    void Start(){
+        state = States.Idle;
+    }
+
+    void SetState(Animation.States _state){
+        if (state != _state){
+            switch (state){
+                case Animation.States.Idle:
+                    // 
+                    break;
+                case Animation.States.Jumping:
+                    // 
+                    break;
+                case Animation.States.Moving:
+                    // 
+                    break;
+                case Animation.States.Sprinting:
+                    // 
+                    break;
+                case Animation.States.Crouching:
+                    // 
+                    break;
+            }
+
+            state = _state;
+        }
+    }
+
+    public void Jump(){
+        SetState(Animation.States.Jumping);
+    }
+
+    public void Idle(){
+        SetState(Animation.States.Idle);
+    }
+
+    public void Move(){
+        SetState(Animation.States.Moving);
     }
 }
