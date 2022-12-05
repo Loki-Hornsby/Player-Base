@@ -66,11 +66,11 @@ public class Movement : MonoBehaviour {
             Vector2 move = Controls.Movement.GetAxis(speed); 
 
             // Coming to a stop
-            if (move.x != 0f || move.y != 0f){
+            if (!(move.x == 0f && move.y == 0f)){
                 vel = new Vector3(
-                    this.transform.forward.x * move.y,
+                    (this.transform.forward.x * move.y) + (this.transform.right.x * move.x),
                     vel.y,
-                    this.transform.forward.z * move.y
+                    (this.transform.forward.z * move.y) + (this.transform.right.z * move.x)
                 );
             } else {
                 vel = new Vector3(

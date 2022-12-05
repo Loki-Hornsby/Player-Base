@@ -1736,9 +1736,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 1359979232913126996}
-  speed: 25
-  sensitivity: 0.25
-  jump: 5
+  speed: 12.5
+  sensitivity: 0.125
+  jump: 2.5
 --- !u!114 &8830173509338578117
 MonoBehaviour:
   m_ObjectHideFlags: 0
