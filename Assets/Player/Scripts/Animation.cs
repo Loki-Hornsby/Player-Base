@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Animation : MonoBehaviour {
     public enum States {
         Idle,
@@ -18,9 +19,11 @@ public class Animation : MonoBehaviour {
     }
 
     public States state;
+    Animator anim;
 
     void Start(){
         state = States.Idle;
+        anim = GetComponent<Animator>();
     }
 
     void SetState(Animation.States _state){
@@ -57,5 +60,15 @@ public class Animation : MonoBehaviour {
 
     public void Move(){
         SetState(Animation.States.Moving);
+    }
+
+    public void Crouch(bool crouch){
+        if (crouch != anim.GetBool("Crouch")){
+            anim.SetBool("Crouch", crouch);
+        }
+    }
+
+    void Update(){
+        Crouch(Controls.Movement.GetCrouching());
     }
 }

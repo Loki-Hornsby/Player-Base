@@ -10,6 +10,16 @@ using UnityEngine;
 
 /// <summary>
 /// Handles the controls
+///
+///    GetKeyDown
+///    only runs once on the first frame that the key was pressed.
+///
+///    GetKeyUp
+///    only runs once on the frame that the key was released.
+///
+///    GetKey
+///    runs continuously to check if a key is currently pressed down or not.
+///
 /// </summary>
 
 public static class Controls {
@@ -72,6 +82,10 @@ public static class Controls {
 
         public static bool GetJump(){
             return Input.GetKeyDown(KeyCode.Space);
+        }
+
+        public static bool GetCrouching(){
+            return Input.GetKey(KeyCode.LeftControl);
         }
     }
 }

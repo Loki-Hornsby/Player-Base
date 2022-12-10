@@ -7,57 +7,169 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System;
+
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animation))]
 public class Movement : MonoBehaviour {
+    [Serializable]
+    public class Walk {
+        [Header("Configuration")]
+        public bool useDefaults;
+
+        [Header("General")]
+        public float speed;
+        public float gravity;
+        public float jump;
+
+        public void Setup(){
+            if (useDefaults){
+                Debug.Log("Setup");
+                speed = 1.5f;
+                gravity = -9.81f;
+                jump = 5f;
+            }
+        }
+    }
+
+    [Serializable]
+    public class Run {
+        [Header("Configuration")]
+        public bool enabled;
+        public bool useDefaults;
+
+        [Header("General")]
+        public float speed;
+        public float gravity;
+        public float jump;
+
+        public void Setup(){
+            if (useDefaults){
+                speed = 1.5f;
+                gravity = -9.81f;
+                jump = 0f;
+            }
+        }
+    }
+
+    [Serializable]
+    public class Crouch {
+        [Header("Configuration")]
+        public bool enabled;
+        public bool useDefaults;
+
+        [Header("General")]
+        public float speed;
+        public float gravity;
+        public float jump;
+
+        public void Setup(){
+            if (useDefaults){
+                speed = 1.5f;
+                gravity = -9.81f;
+                jump = 0f;
+            }
+        }
+    }
+
+    [Serializable]
+    public class Crawl {
+        [Header("Configuration")]
+        public bool enabled;
+        public bool useDefaults;
+
+        [Header("General")]
+        public float speed;
+        public float gravity;
+        public float jump;
+
+        public void Setup(){
+            if (useDefaults){
+                speed = 1.5f;
+                gravity = -9.81f;
+                jump = 0f;
+            }
+        }
+    }
+
+    [Serializable]
+    public class Look {
+        public float sensitivity = 0.025f;
+
+        public void Setup(){
+
+        }
+    }
+
     // References
     [Header("References")]
-    public GameObject head;
-    public Animation anim;
+    public GameObject Head;
+    public GameObject Body;
     CharacterController cont;
+    Animation anim;
     
     // Properties
-    [Header("Properties")]
-    public float speed = 1.5f;
-    public float sensitivity = 0.025f;
-    public const float gravity = -9.81f;
-    public float jump = 5f;
+    [Header("Movement Types")]
+    public Walk walk;
+    public Run run;
+    public Crouch crouch;
+    public Crawl crawl;
 
-    // Variables
+    [Header("Look configuration")]
+    public Look look;
+    
+    // Velocity
     Vector3 vel;
-    Vector3 rotation;
+
+    // Rotation
+    Vector3 original;
 
     void Start(){
         // Setup
         cont = GetComponent<CharacterController>();
+        anim = GetComponent<Animation>();
         
         Controls.Mouse.LockMouse();
 
+        // Variable Init
+        walk.Setup();
+        run.Setup();
+        crouch.Setup();
+        crawl.Setup();
+        look.Setup();
+
         // Vars
         vel = Vector3.zero;
-        rotation = Vector3.zero;
+        original = Head.transform.eulerAngles;
     }
+
+    //float GetSpeed(){
+        //if (){
+
+        //}
+    //}
 
     void ApplyRotation(){
         // Get Mouse Pos
         Vector2 mPos = Controls.Mouse.GetMousePosition(false, Time.deltaTime);
 
         // Left, Right
-        rotation.y += mPos.x; 
+        original.y += mPos.x; 
         
         // Up, Down
-		rotation.x += -mPos.y;
-        rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
+		original.x += -mPos.y;
+        //rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
 
         // Apply
-		head.transform.eulerAngles = rotation * sensitivity;
-        transform.eulerAngles = new Vector3(0f, rotation.y, 0f) * sensitivity;
+		Head.transform.eulerAngles = original * look.sensitivity;
+        Body.transform.eulerAngles = new Vector3(0f, original.y, 0f) * look.sensitivity;
     }
 
     void ApplyPhysics(){
         Debug.Log(cont.isGrounded);
 
         // Gravity
-        vel.y += gravity * Time.deltaTime;
+        vel.y += walk.gravity * Time.deltaTime;
 
         // Apply
         cont.Move(vel * Time.deltaTime);
@@ -69,19 +181,15 @@ public class Movement : MonoBehaviour {
             vel.y = 0f;
 
             // Movement
-            Vector2 move = Controls.Movement.GetAxis(speed); 
+            Vector2 move = Controls.Movement.GetAxis(walk.speed); 
 
             if (!(move.x == 0f && move.y == 0f)){
-                anim.Move();
-
                 vel = new Vector3(
-                    (this.transform.forward.x * move.y) + (this.transform.right.x * move.x),
+                    (Body.transform.forward.x * move.y) + (Body.transform.right.x * move.x),
                     vel.y,
-                    (this.transform.forward.z * move.y) + (this.transform.right.z * move.x)
+                    (Body.transform.forward.z * move.y) + (Body.transform.right.z * move.x)
                 );
             } else { // Coming to a idle
-                anim.Idle();
-
                 vel = new Vector3(
                     0f,
                     0f,
@@ -91,9 +199,7 @@ public class Movement : MonoBehaviour {
 
             // Jump
             if (Controls.Movement.GetJump()){
-                anim.Jump();
-
-                vel.y += jump;
+                vel.y += walk.jump;
             }
         }
     }
