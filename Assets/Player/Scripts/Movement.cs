@@ -105,7 +105,7 @@ public class Movement : MonoBehaviour {
     CharacterController cont;
     
     // Properties
-    [Header("Properties")]
+    [Header("Configuration")]
     public Walk walk;
     public Run run;
     public Crouch crouch;
