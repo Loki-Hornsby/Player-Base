@@ -381,11 +381,7 @@ Transform:
   m_Father: {fileID: 820614}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!1001 &3022266813742986465
-=======
 --- !u!1001 &4801722121037124949
->>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -406,11 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8830173509338578121, guid: 651ad808467a9144b82c47ac0468e76b, type: 3}
       propertyPath: m_LocalPosition.y
-<<<<<<< Updated upstream
-      value: 8
-=======
       value: 1
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8830173509338578121, guid: 651ad808467a9144b82c47ac0468e76b, type: 3}
       propertyPath: m_LocalPosition.z

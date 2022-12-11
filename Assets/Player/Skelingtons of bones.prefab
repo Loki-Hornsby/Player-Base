@@ -171,31 +171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Head: {fileID: 3151612998424444687}
-  walk:
-    useDefaults: 1
-    speed: 1.5
-    gravity: -9.81
-    jump: 5
-  run:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
-  crouch:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
-  crawl:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
-  look:
-    sensitivity: 0.025
+  speed: 1.5
+  sensitivity: 0.025
+  jump: 5
 --- !u!114 &8892445151960267583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,28 +628,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7907345219645061329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bdc95e4d56aef44e92d22b20b9993b3, type: 3}
+  m_Script: {fileID: 11500000, guid: b417e5cc6fc7c9c41935ec859783450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Feet:
-  - joints:
-    - RaycastLayers:
-        serializedVersion: 2
-        m_Bits: 8
-      RaycastDistance: 5
-      AlignTargetTo: 5
-      reference: {fileID: 6690116851038879188}
-      target: {fileID: 805030279115830536}
-      hint: {fileID: 805030280584439360}
-  - joints:
-    - RaycastLayers:
-        serializedVersion: 2
-        m_Bits: 8
-      RaycastDistance: 5
-      AlignTargetTo: 5
-      reference: {fileID: 3746361192016893104}
-      target: {fileID: 3310258420426538252}
-      hint: {fileID: 4348153680641169575}
+  Feet: []
 --- !u!114 &8648850686435095040
 MonoBehaviour:
   m_ObjectHideFlags: 0

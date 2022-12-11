@@ -7,14 +7,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System;
+
 [RequireComponent(typeof(CharacterController))]
 public class Movement : MonoBehaviour {
-<<<<<<< Updated upstream
-    // References
-    [Header("References")]
-    public GameObject head;
-    public Animation anim;
-=======
     [Serializable]
     public class Walk {
         [Header("Configuration")]
@@ -106,7 +102,6 @@ public class Movement : MonoBehaviour {
     // References
     [Header("References")]
     public GameObject Head;
->>>>>>> Stashed changes
     CharacterController cont;
     
     // Properties
@@ -143,13 +138,8 @@ public class Movement : MonoBehaviour {
         rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
 
         // Apply
-<<<<<<< Updated upstream
-		head.transform.eulerAngles = rotation * sensitivity;
-        transform.eulerAngles = new Vector3(0f, rotation.y, 0f) * sensitivity;
-=======
 		//Head.transform.eulerAngles = original * look.sensitivity;
-        transform.eulerAngles = new Vector3(0f, original.y, 0f) * look.sensitivity;
->>>>>>> Stashed changes
+        //transform.eulerAngles = new Vector3(0f, original.y, 0f) * look.sensitivity;
     }
 
     void ApplyPhysics(){
@@ -169,22 +159,12 @@ public class Movement : MonoBehaviour {
             Vector2 move = Controls.Movement.GetAxis(speed); 
 
             if (!(move.x == 0f && move.y == 0f)){
-                anim.Move();
-
                 vel = new Vector3(
-<<<<<<< Updated upstream
-                    (this.transform.forward.x * move.y) + (this.transform.right.x * move.x),
-                    vel.y,
-                    (this.transform.forward.z * move.y) + (this.transform.right.z * move.x)
-=======
                     (transform.forward.x * move.y) + (transform.right.x * move.x),
                     vel.y,
                     (transform.forward.z * move.y) + (transform.right.z * move.x)
->>>>>>> Stashed changes
                 );
             } else { // Coming to a idle
-                anim.Idle();
-
                 vel = new Vector3(
                     0f,
                     0f,
@@ -194,8 +174,6 @@ public class Movement : MonoBehaviour {
 
             // Jump
             if (Controls.Movement.GetJump()){
-                anim.Jump();
-
                 vel.y += jump;
             }
         }
