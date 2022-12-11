@@ -106,10 +106,11 @@ public class Movement : MonoBehaviour {
     
     // Properties
     [Header("Properties")]
-    public float speed = 1.5f;
-    public float sensitivity = 0.025f;
-    public const float gravity = -9.81f;
-    public float jump = 5f;
+    public Walk walk;
+    public Run run;
+    public Crouch crouch;
+    public Crawl crawl;
+    public Look look;
 
     // Variables
     Vector3 vel;
@@ -139,12 +140,12 @@ public class Movement : MonoBehaviour {
 
         // Apply
 		//Head.transform.eulerAngles = original * look.sensitivity;
-        //transform.eulerAngles = new Vector3(0f, original.y, 0f) * look.sensitivity;
+        transform.eulerAngles = new Vector3(0f, rotation.y, 0f) * look.sensitivity;
     }
 
     void ApplyPhysics(){
         // Gravity
-        vel.y += gravity * Time.deltaTime;
+        vel.y += walk.gravity * Time.deltaTime;
 
         // Apply
         cont.Move(vel * Time.deltaTime);
@@ -156,7 +157,7 @@ public class Movement : MonoBehaviour {
             vel.y = 0f;
 
             // Movement
-            Vector2 move = Controls.Movement.GetAxis(speed); 
+            Vector2 move = Controls.Movement.GetAxis(walk.speed); 
 
             if (!(move.x == 0f && move.y == 0f)){
                 vel = new Vector3(
@@ -174,7 +175,7 @@ public class Movement : MonoBehaviour {
 
             // Jump
             if (Controls.Movement.GetJump()){
-                vel.y += jump;
+                vel.y += walk.jump;
             }
         }
     }
