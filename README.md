@@ -1,5 +1,5 @@
 # Player-Base
-A base for a 3D player which uses code and assets from  and 
+A base for a 3D player.
 
 # External Resources
 - [IK System](https://www.youtube.com/watch?v=acMK93A-FSY&vl=en)
