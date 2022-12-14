@@ -7,5 +7,5 @@ A base for a 3D player which uses code and assets from  and
 - [Adobe Substance Plugin for Unity](https://substance3d.adobe.com/plugins/substance-in-unity/)
 
 # Features
-- Movement
+- Movement ~ WIP
 - IK (Procedural Animation)
