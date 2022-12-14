@@ -19,7 +19,48 @@ using UnityEngine.Animations.Rigging;
 public class IKFeet : MonoBehaviour {
     [Serializable]
     public class Foot {
-        [System.NonSerialized] public bool setup;
+        [Serializable]
+        public class Joint {
+            // General
+            bool setup;
+
+            [Header("References")]
+            public TwoBoneIKConstraint reference; 
+            public GameObject target;
+            public GameObject hint;
+
+            [Header("Offsets")]
+            public float forwardOffset;
+            public float heightOffset;
+            
+            // Read Only
+            [System.NonSerialized] public TwoBoneIKConstraintData data;
+            [System.NonSerialized] public GameObject root;
+            [System.NonSerialized] public GameObject mid;
+            [System.NonSerialized] public GameObject tip;
+
+            public bool isSetup(){
+                return setup;
+            }
+
+            public void Setup(){
+                reference.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+
+                setup = false;
+            }
+
+            public void Complete(){
+                // Storage
+                data = reference.data;
+                root = data.root.gameObject;
+                mid = data.mid.gameObject;
+                tip = data.tip.gameObject;
+
+                setup = true;
+            }
+        }
+
+        bool setup;
 
         // Raycast
         [Header("Raycast")]
@@ -29,26 +70,15 @@ public class IKFeet : MonoBehaviour {
         // Configuration
         [Header("Configuration")]
         public Vector2 maxTargetBounds;
-        public float forwardOffset;
 
         // References
-        [Header("References")]
-        public TwoBoneIKConstraint reference; 
-        public GameObject target;
-        public GameObject hint;
-        Rigidbody rb;
-
-        // Read Only
-        [System.NonSerialized] public TwoBoneIKConstraintData data;
-        [System.NonSerialized] public GameObject root;
-        [System.NonSerialized] public GameObject mid;
-        [System.NonSerialized] public GameObject tip;
+        [Header("Joints")]
+        public List<Joint> joints;
 
         // Movement Variables
-        public float tf;
-        public float dff;
-        [Range(0f, 1f)]
-        public float percJump;
+        float tf;
+        float dff;
+        float percJump;
 
         /// <summary>
         /// Setup Joints and Feet
@@ -56,21 +86,18 @@ public class IKFeet : MonoBehaviour {
         public IEnumerator Setup(){
             Debug.Log("Setting up IK handles...");
 
-            rb = reference.transform.root.GetComponent<Rigidbody>();
             setup = false;
 
-            yield return new WaitForSeconds(5); // Wait for IK to setup
+            foreach (var joint in joints){
+                // Setup Joint
+                joint.Setup();
 
-            // Storage
-            data = reference.data;
-            root = data.root.gameObject;
-            mid = data.mid.gameObject;
-            tip = data.tip.gameObject;
+                yield return new WaitForSeconds(5); // Wait for IK to setup
 
-            // Reference
-            reference.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+                // Complete Setup
+                joint.Complete();
+            }
 
-            // Setup
             setup = true;
 
             Debug.Log("Finished setting up IK handles!");
@@ -81,44 +108,49 @@ public class IKFeet : MonoBehaviour {
         /// </summary>
         public void Update(float t, PlayerMovement move){
             if (setup){
-                //if (rb.freezeRotation) rb.freezeRotation = false;
+                foreach (var joint in joints){
+                    if (joint.isSetup()){
+                        // Raycast
+                        RaycastHit hit;
 
-                // Raycast
-                RaycastHit hit;
+                        Physics.Raycast(
+                            joint.root.transform.position, 
+                            -Vector3.up, 
+                            out hit, 
+                            RaycastDistance, 
+                            RaycastLayers
+                        );
 
-                Physics.Raycast(
-                    root.transform.position, 
-                    -Vector3.up, 
-                    out hit, 
-                    RaycastDistance, 
-                    RaycastLayers
-                );
+                        // Hit point
+                        Vector3 hp = hit.point;
 
-                // Hit point
-                Vector3 hp = hit.point;
+                        // Distance from floor
+                        dff = Vector3.Distance(joint.root.transform.position, hp);
 
-                // Distance from floor
-                dff = Vector3.Distance(root.transform.position, hp);
+                        // Percentage of jump
+                        //percJump = ((move.GetCurrentJumpHeight()*move.GetCurrentGravity())/dff);
 
-                // Percentage of jump
-                //percJump = ((move.GetCurrentJumpHeight()*move.GetCurrentGravity())/dff);
+                        // Offsets
+                        Vector3 HO = new Vector3(0f, joint.heightOffset, 0f);
+                        Vector3 FO = joint.reference.transform.forward * joint.forwardOffset;
 
-                // Automatic movement handling (i think this part is pretty nifty!)
-                tf += t;
-                target.transform.position = hp + reference.transform.forward * forwardOffset; /*- new Vector3(
-                    0f, 
-                    Mathf.Lerp(
-                        0f, maxTargetBounds.y,
-                        dff
-                    ),
-                    0f
-                );*/
+                        // Automatic movement handling (i think this part is pretty nifty!)
+                        tf += t;
+                        joint.target.transform.position = hp + HO + FO; 
+                            
+                            /*- new Vector3(
+                            0f, 
+                            Mathf.Lerp(
+                                0f, maxTargetBounds.y,
+                                dff
+                            ),
+                            0f
+                        );*/
 
-                // Hint
-                hint.transform.position = reference.transform.position + reference.transform.forward * forwardOffset;
-            } else {
-                // Keep the rigidbody upright until joint is setup
-                //rb.freezeRotation = true;
+                        // Hint
+                        joint.hint.transform.position = joint.root.transform.position + HO + FO;
+                    }
+                }
             }
         }
     }   

@@ -1,0 +1,4456 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
+  m_Name: graph_0
+  m_EditorClassIdentifier: 
+  AssetPath: Assets/Player/Obj/pavement_street_large_used.sbsar
+  OutputPath: Assets/Player/Obj/pavement_street_large_used_graph_0
+  RawData: {fileID: -244192453324840774, guid: 07d2eff1ae033ac41bef0a0c1a32b9e0, type: 3}
+  Name: graph_0
+  IsRoot: 1
+  FlagedForDelete: 0
+  GUID: b3d50cc5-e5df-42d3-bd15-84ab5926a7da
+  Index: 0
+  Input:
+  - rid: 1000
+  - rid: 1001
+  - rid: 1002
+  - rid: 1003
+  - rid: 1004
+  - rid: 1005
+  - rid: 1006
+  - rid: 1007
+  - rid: 1008
+  - rid: 1009
+  - rid: 1010
+  - rid: 1011
+  - rid: 1012
+  - rid: 1013
+  - rid: 1014
+  - rid: 1015
+  - rid: 1016
+  - rid: 1017
+  - rid: 1018
+  - rid: 1019
+  - rid: 1020
+  - rid: 1021
+  - rid: 1022
+  - rid: 1023
+  - rid: 1024
+  - rid: 1025
+  - rid: 1026
+  - rid: 1027
+  - rid: 1028
+  - rid: 1029
+  - rid: 1030
+  - rid: 1031
+  - rid: 1032
+  - rid: 1033
+  - rid: 1034
+  - rid: 1035
+  - rid: 1036
+  - rid: 1037
+  - rid: 1038
+  - rid: 1039
+  - rid: 1040
+  - rid: 1041
+  - rid: 1042
+  - rid: 1043
+  - rid: 1044
+  - rid: 1045
+  - rid: 1046
+  - rid: 1047
+  - rid: 1048
+  - rid: 1049
+  - rid: 1050
+  - rid: 1051
+  - rid: 1052
+  - rid: 1053
+  - rid: 1054
+  - rid: 1055
+  - rid: 1056
+  - rid: 1057
+  - rid: 1058
+  - rid: 1059
+  - rid: 1060
+  - rid: 1061
+  - rid: 1062
+  - rid: 1063
+  - rid: 1064
+  - rid: 1065
+  - rid: 1066
+  - rid: 1067
+  - rid: 1068
+  - rid: 1069
+  - rid: 1070
+  - rid: 1071
+  - rid: 1072
+  - rid: 1073
+  - rid: 1074
+  - rid: 1075
+  - rid: 1076
+  - rid: 1077
+  - rid: 1078
+  - rid: 1079
+  - rid: 1080
+  - rid: 1081
+  - rid: 1082
+  - rid: 1083
+  - rid: 1084
+  - rid: 1085
+  - rid: 1086
+  - rid: 1087
+  - rid: 1088
+  - rid: 1089
+  - rid: 1090
+  - rid: 1091
+  - rid: 1092
+  - rid: 1093
+  - rid: 1094
+  - rid: 1095
+  - rid: 1096
+  - rid: 1097
+  - rid: 1098
+  - rid: 1099
+  - rid: 1100
+  - rid: 1101
+  - rid: 1102
+  - rid: 1103
+  - rid: 1104
+  - rid: 1105
+  - rid: 1106
+  - rid: 1107
+  - rid: 1108
+  - rid: 1109
+  - rid: 1110
+  - rid: 1111
+  - rid: 1112
+  - rid: 1113
+  - rid: 1114
+  - rid: 1115
+  - rid: 1116
+  - rid: 1117
+  - rid: 1118
+  - rid: 1119
+  - rid: 1120
+  - rid: 1121
+  - rid: 1122
+  - rid: 1123
+  - rid: 1124
+  - rid: 1125
+  - rid: 1126
+  - rid: 1127
+  - rid: 1128
+  - rid: 1129
+  - rid: 1130
+  - rid: 1131
+  - rid: 1132
+  - rid: 1133
+  - rid: 1134
+  - rid: 1135
+  - rid: 1136
+  - rid: 1137
+  - rid: 1138
+  - rid: 1139
+  - rid: 1140
+  - rid: 1141
+  - rid: 1142
+  - rid: 1143
+  - rid: 1144
+  - rid: 1145
+  - rid: 1146
+  - rid: 1147
+  - rid: 1148
+  - rid: 1149
+  - rid: 1150
+  - rid: 1151
+  - rid: 1152
+  - rid: 1153
+  - rid: 1154
+  - rid: 1155
+  - rid: 1156
+  - rid: 1157
+  - rid: 1158
+  - rid: 1159
+  - rid: 1160
+  - rid: 1161
+  - rid: 1162
+  - rid: 1163
+  - rid: 1164
+  - rid: 1165
+  - rid: 1166
+  - rid: 1167
+  - rid: 1168
+  - rid: 1169
+  - rid: 1170
+  - rid: 1171
+  - rid: 1172
+  - rid: 1173
+  - rid: 1174
+  - rid: 1175
+  - rid: 1176
+  - rid: 1177
+  - rid: 1178
+  - rid: 1179
+  - rid: 1180
+  - rid: 1181
+  - rid: 1182
+  - rid: 1183
+  - rid: 1184
+  - rid: 1185
+  - rid: 1186
+  - rid: 1187
+  - rid: 1188
+  - rid: 1189
+  - rid: 1190
+  - rid: 1191
+  - rid: 1192
+  - rid: 1193
+  - rid: 1194
+  - rid: 1195
+  Output:
+  - Index: 0
+    VirtualOutputIndex: 9
+    Description:
+      Identifier: diffuse
+      Label: diffuse
+      Index: 0
+      Type: 8
+      Channel: diffuse
+    OutputTexture: {fileID: 0}
+    sRGB: 1
+    IsVirtual: 0
+    IsStandardOutput: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 1
+    VirtualOutputIndex: 10
+    Description:
+      Identifier: basecolor
+      Label: basecolor
+      Index: 1
+      Type: 8
+      Channel: baseColor
+    OutputTexture: {fileID: 2800000, guid: 769b0fe47b77a27468016ded8a9d1d73, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 2
+    VirtualOutputIndex: 11
+    Description:
+      Identifier: normal
+      Label: normal
+      Index: 2
+      Type: 8
+      Channel: normal
+    OutputTexture: {fileID: 2800000, guid: 92359a79e2db0ec498b40f6ef14a6316, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 3
+    VirtualOutputIndex: 12
+    Description:
+      Identifier: specular
+      Label: specular
+      Index: 3
+      Type: 8
+      Channel: specular
+    OutputTexture: {fileID: 0}
+    sRGB: 1
+    IsVirtual: 0
+    IsStandardOutput: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: roughness
+    InvertAssignedAlpha: 1
+    Flags: 0
+  - Index: 4
+    VirtualOutputIndex: 13
+    Description:
+      Identifier: glossiness
+      Label: glossiness
+      Index: 4
+      Type: 8
+      Channel: glossiness
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 5
+    VirtualOutputIndex: 14
+    Description:
+      Identifier: roughness
+      Label: roughness
+      Index: 5
+      Type: 8
+      Channel: roughness
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 6
+    VirtualOutputIndex: 15
+    Description:
+      Identifier: metallic
+      Label: metallic
+      Index: 6
+      Type: 8
+      Channel: metallic
+    OutputTexture: {fileID: 2800000, guid: 39a27d0feecaf8340bd352da00596360, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 1
+    AlphaChannel: roughness
+    InvertAssignedAlpha: 1
+    Flags: 0
+  - Index: 7
+    VirtualOutputIndex: 16
+    Description:
+      Identifier: ambient_occlusion
+      Label: ambient_occlusion
+      Index: 7
+      Type: 8
+      Channel: ambientOcclusion
+    OutputTexture: {fileID: 2800000, guid: 6067e72e74a47cc43a6fef6bd0a64e6e, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 8
+    VirtualOutputIndex: 17
+    Description:
+      Identifier: height
+      Label: height
+      Index: 8
+      Type: 8
+      Channel: height
+    OutputTexture: {fileID: 2800000, guid: 8bd4b5165d092d2469eba881a707a684, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  HasPhysicalSize: 0
+  PhysicalSize: {x: 0, y: 0, z: 0}
+  EnablePhysicalSize: 0
+  Thumbnail: 
+  HasThumbnail: 0
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://pavement_street_large_used\" label=\"\"
+    >\n  <presetinput identifier=\"$outputsize\" uid=\"2062637921\" type=\"8\" value=\"10,10\"
+    />\n  <presetinput identifier=\"height_position\" uid=\"127784141\" type=\"0\"
+    value=\"0.516\" />\n </sbspreset>\n"
+  IsRuntimeOnly: 0
+  GenerateAllOutputs: 0
+  GenerateAllMipmaps: 1
+  OutputMaterial: {fileID: 2100000, guid: 6910fb319338aab41ba0f9284bad463f, type: 2}
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://pavement_street_large_used\" label=\"\"
+    >\n  <presetinput identifier=\"$outputsize\" uid=\"2062637921\" type=\"8\" value=\"10,10\"
+    />\n </sbspreset>\n"
+  MaterialShader: Standard
+  RenderTextures: 0
+  OutputRemaped: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 0
+        Description:
+          Identifier: $outputsize
+          Label: $outputsize
+          GuiGroup: 
+          GuiDescription: 
+          Type: 5
+          WidgetType: 0
+        Data: {x: 10, y: 10}
+        NumericalDescription:
+          DefaultValue: {x: 8, y: 8}
+          MinValue: {x: 0, y: 0}
+          MaxValue: {x: 1, y: 1}
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1001
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 1
+        Description:
+          Identifier: $randomseed
+          Label: $randomseed
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 0
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1002
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        Description:
+          Identifier: channel_diffuse
+          Label: Diffuse
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1003
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        Description:
+          Identifier: channel_basecolor
+          Label: Base Color
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1004
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        Description:
+          Identifier: channel_normal
+          Label: Normal
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1005
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        Description:
+          Identifier: channel_specular
+          Label: Specular
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1006
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 6
+        Description:
+          Identifier: channel_glossiness
+          Label: Glossiness
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1007
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 7
+        Description:
+          Identifier: channel_roughness
+          Label: Roughness
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1008
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 8
+        Description:
+          Identifier: channel_metallic
+          Label: Metallic
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1009
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 9
+        Description:
+          Identifier: channel_ambient_occlusion
+          Label: Ambient Occlusion
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1010
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 10
+        Description:
+          Identifier: channel_height
+          Label: Height
+          GuiGroup: Channels
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1011
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 11
+        Description:
+          Identifier: hue_shift
+          Label: Hue Shift
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1012
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 12
+        Description:
+          Identifier: saturation
+          Label: Saturation
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1013
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 13
+        Description:
+          Identifier: luminosity
+          Label: Luminosity
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1014
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 14
+        Description:
+          Identifier: contrast
+          Label: Contrast
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: -1
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1015
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 15
+        Description:
+          Identifier: normal_format
+          Label: Normal Format
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 4
+          WidgetType: 5
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 2
+          EnumValues:
+          - Value: 0
+            Label: DirectX
+          - Value: 1
+            Label: OpenGL
+    - rid: 1016
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 16
+        Description:
+          Identifier: normal_intensity
+          Label: Normal Intensity
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1017
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 17
+        Description:
+          Identifier: roughness
+          Label: Roughness
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 3
+        Data: 0.796078
+        NumericalDescription:
+          DefaultValue: 0.796078
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1018
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 18
+        Description:
+          Identifier: roughness_range
+          Label: Roughness Range
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1019
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 19
+        Description:
+          Identifier: height_range
+          Label: Height Range
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1020
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 20
+        Description:
+          Identifier: height_position
+          Label: Height Position
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.516
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1021
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 21
+        Description:
+          Identifier: Advanced_parameters_Discolor
+          Label: Discolor
+          GuiGroup: Advanced parameters
+          GuiDescription: 'Turns the Discolor Grunge effect on or off
+
+'
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1022
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 22
+        Description:
+          Identifier: Advanced_parameters_Moss
+          Label: Moss
+          GuiGroup: Advanced parameters
+          GuiDescription: True returns the first input, False returns the second
+            input.
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1023
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 23
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat
+          Label: Lichen Splat
+          GuiGroup: Advanced parameters
+          GuiDescription: 'Turns entire node network on or off
+
+'
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1024
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 24
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface
+          Label: Sandy Surface
+          GuiGroup: Advanced parameters
+          GuiDescription: 'Turns entire node network on or off
+
+'
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1025
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 25
+        Description:
+          Identifier: Advanced_parameters_Leak
+          Label: Leak
+          GuiGroup: Advanced parameters
+          GuiDescription: True returns the first input, False returns the second
+            input.
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1026
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 26
+        Description:
+          Identifier: Advanced_parameters_Rust
+          Label: Rust
+          GuiGroup: Advanced parameters
+          GuiDescription: 'Turns Rust On or Off
+
+'
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1027
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 27
+        Description:
+          Identifier: Advanced_parameters_Global_Grunge
+          Label: Global Grunge
+          GuiGroup: Advanced parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.52
+        NumericalDescription:
+          DefaultValue: 0.52
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1028
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 28
+        Description:
+          Identifier: Advanced_parameters_Discolor_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Discolor
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.24
+        NumericalDescription:
+          DefaultValue: 0.24
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1029
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 29
+        Description:
+          Identifier: Advanced_parameters_Discolor_Material_1_Amount
+          Label: Material 1 Amount
+          GuiGroup: Advanced parameters/Discolor
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1030
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 30
+        Description:
+          Identifier: Advanced_parameters_Discolor_Material_2_Amount
+          Label: Material 2 Amount
+          GuiGroup: Advanced parameters/Discolor
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1031
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 31
+        Description:
+          Identifier: Advanced_parameters_Discolor_Material_3_Amount
+          Label: Material 3 Amount
+          GuiGroup: Advanced parameters/Discolor
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1032
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 32
+        Description:
+          Identifier: Advanced_parameters_Discolor_Base_Color_Hue
+          Label: Hue
+          GuiGroup: Advanced parameters/Discolor/Base Color
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.45
+        NumericalDescription:
+          DefaultValue: 0.45
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1033
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 33
+        Description:
+          Identifier: Advanced_parameters_Discolor_Base_Color_Saturation
+          Label: Saturation
+          GuiGroup: Advanced parameters/Discolor/Base Color
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.54
+        NumericalDescription:
+          DefaultValue: 0.54
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1034
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 34
+        Description:
+          Identifier: Advanced_parameters_Discolor_Base_Color_Lightness
+          Label: Lightness
+          GuiGroup: Advanced parameters/Discolor/Base Color
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1035
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 35
+        Description:
+          Identifier: Advanced_parameters_Discolor_Glossiness_Glossiness_Value
+          Label: Glossiness Value
+          GuiGroup: Advanced parameters/Discolor/Glossiness
+          GuiDescription: 
+          Type: 0
+          WidgetType: 3
+        Data: 0.564706
+        NumericalDescription:
+          DefaultValue: 0.564706
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1036
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 36
+        Description:
+          Identifier: Advanced_parameters_Moss_Moss_Growth
+          Label: Moss Growth
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1037
+      type: {class: SubstanceInputFloat3, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 37
+        Description:
+          Identifier: Advanced_parameters_Moss_Moss_Color
+          Label: Moss Color
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 2
+          WidgetType: 3
+        Data: {x: 0.486275, y: 0.486275, z: 0.0588235}
+        NumericalDescription:
+          DefaultValue: {x: 0.486275, y: 0.486275, z: 0.0588235}
+          MinValue: {x: 0, y: 0, z: 0}
+          MaxValue: {x: 1, y: 1, z: 1}
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1038
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 38
+        Description:
+          Identifier: Advanced_parameters_Moss_Hue
+          Label: Hue
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1039
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 39
+        Description:
+          Identifier: Advanced_parameters_Moss_Saturation
+          Label: Saturation
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1040
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 40
+        Description:
+          Identifier: Advanced_parameters_Moss_Lightness
+          Label: Lightness
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.45
+        NumericalDescription:
+          DefaultValue: 0.45
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1041
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 41
+        Description:
+          Identifier: Advanced_parameters_Moss_Normal_Intensiy
+          Label: Normal Intensiy
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.27
+        NumericalDescription:
+          DefaultValue: 0.27
+          MinValue: 0
+          MaxValue: 3
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1042
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 42
+        Description:
+          Identifier: Advanced_parameters_Moss_Glossiness
+          Label: Glossiness
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 3
+        Data: 0.2
+        NumericalDescription:
+          DefaultValue: 0.2
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1043
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 43
+        Description:
+          Identifier: Advanced_parameters_Moss_Moss_Opacity
+          Label: Moss Opacity
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1044
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 44
+        Description:
+          Identifier: Advanced_parameters_Moss_Global_Noise
+          Label: Global Noise
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: Add noise globally or isolate
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1045
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 45
+        Description:
+          Identifier: Advanced_parameters_Moss_Material_1_Moss_Amount
+          Label: Material 1 Moss Amount
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1046
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 46
+        Description:
+          Identifier: Advanced_parameters_Moss_Material_2_Moss_Amount
+          Label: Material 2 Moss Amount
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1047
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 47
+        Description:
+          Identifier: Advanced_parameters_Moss_Material_3_Moss_Amount
+          Label: Material 3 Moss Amount
+          GuiGroup: Advanced parameters/Moss
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1048
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 48
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Global_Global_Position
+          Label: Global Position
+          GuiGroup: Advanced parameters/Moss/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.49
+        NumericalDescription:
+          DefaultValue: 0.49
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1049
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 49
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Global_Global_Contrast
+          Label: Global Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1050
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 50
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Global_Blur_Mask
+          Label: Blur Mask
+          GuiGroup: Advanced parameters/Moss/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1051
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 51
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Vertical_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.53
+        NumericalDescription:
+          DefaultValue: 0.53
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1052
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 52
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Vertical_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Moss/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.31
+        NumericalDescription:
+          DefaultValue: 0.31
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1053
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 53
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Vertical_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1054
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 54
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Vertical_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Moss/Mask/Vertical
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1055
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 55
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Horizontal_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1056
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 56
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Horizontal_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Moss/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1057
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 57
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Horizontal_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1058
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 58
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Horizontal_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Moss/Mask/Horizontal
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1059
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 59
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1060
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 60
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Level
+          Label: Level
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.7
+        NumericalDescription:
+          DefaultValue: 0.7
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1061
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 61
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1062
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 62
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Convex_Convex_Edges_Width
+          Label: Convex Edges Width
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.54
+        NumericalDescription:
+          DefaultValue: 0.54
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1063
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 63
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Convex_Convex_Softness
+          Label: Convex Softness
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.38
+        NumericalDescription:
+          DefaultValue: 0.38
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1064
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 64
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Convex_Convex_Intensity
+          Label: Convex Intensity
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1065
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 65
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Concave_Concave_Edges_Width
+          Label: Concave Edges Width
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.01
+        NumericalDescription:
+          DefaultValue: 0.01
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1066
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 66
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Concave_Concave_Softness
+          Label: Concave Softness
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1067
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 67
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Curvature_Concave_Concave_Intensity
+          Label: Concave Intensity
+          GuiGroup: Advanced parameters/Moss/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.76
+        NumericalDescription:
+          DefaultValue: 0.76
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1068
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 68
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Ambient_Occlusion_Occlude_or_Gather
+          Label: Occlude or Gather
+          GuiGroup: Advanced parameters/Moss/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 4
+          WidgetType: 5
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 2
+          EnumValues:
+          - Value: 0
+            Label: Occlude
+          - Value: 1
+            Label: Gather
+    - rid: 1069
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 69
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Ambient_Occlusion_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Moss/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.49
+        NumericalDescription:
+          DefaultValue: 0.49
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1070
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 70
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Ambient_Occlusion_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.03
+        NumericalDescription:
+          DefaultValue: 0.03
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1071
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 71
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Ambient_Occlusion_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1072
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 72
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Incline_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1073
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 73
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Incline_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Moss/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1074
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 74
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Incline_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1075
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 75
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Incline_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Moss/Mask/Incline
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1076
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 76
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Height_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1077
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 77
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Height_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Moss/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1078
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 78
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Height_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1079
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 79
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_Height_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Moss/Mask/Height
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1080
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 80
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_RGB_Mask_Input_Selection
+          Label: Input Selection
+          GuiGroup: Advanced parameters/Moss/Mask/RGB Mask
+          GuiDescription: 'Gametextures style mask file utilizing RGB to mask out
+            certain materials
+
+'
+          Type: 4
+          WidgetType: 5
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 3
+          EnumValues:
+          - Value: 0
+            Label: Red
+          - Value: 1
+            Label: Green
+          - Value: 2
+            Label: Blue
+    - rid: 1081
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 81
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_RGB_Mask_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Moss/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1082
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 82
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_RGB_Mask_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Moss/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1083
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 83
+        Description:
+          Identifier: Advanced_parameters_Moss_Mask_RGB_Mask_RGB_Mask_Contrast
+          Label: RGB Mask Contrast
+          GuiGroup: Advanced parameters/Moss/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1084
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 84
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Multiplier
+          Label: Multiplier
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 'Number of Lichen.  Shrinks as number increases
+
+'
+          Type: 4
+          WidgetType: 1
+        Data: 64
+        NumericalDescription:
+          DefaultValue: 64
+          MinValue: 1
+          MaxValue: 64
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1085
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 85
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Scale
+          Label: Scale
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 2.68
+        NumericalDescription:
+          DefaultValue: 2.68
+          MinValue: 0
+          MaxValue: 2
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1086
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 86
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Scale_Variation
+          Label: Scale Variation
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.93
+        NumericalDescription:
+          DefaultValue: 0.93
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1087
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 87
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Normal_Intensity
+          Label: Normal Intensity
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.37
+        NumericalDescription:
+          DefaultValue: 0.37
+          MinValue: 0
+          MaxValue: 3
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1088
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 88
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 'Opacity - with mask
+
+'
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1089
+      type: {class: SubstanceInputFloat3, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 89
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Lichen_Color
+          Label: Lichen Color
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 2
+          WidgetType: 3
+        Data: {x: 0.419608, y: 0.360784, z: 0.113725}
+        NumericalDescription:
+          DefaultValue: {x: 0.419608, y: 0.360784, z: 0.113725}
+          MinValue: {x: 0, y: 0, z: 0}
+          MaxValue: {x: 1, y: 1, z: 1}
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1090
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 90
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Hue
+          Label: Hue
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1091
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 91
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Saturation
+          Label: Saturation
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1092
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 92
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Lightness
+          Label: Lightness
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1093
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 93
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Glossiness
+          Label: Glossiness
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 3
+        Data: 0.231373
+        NumericalDescription:
+          DefaultValue: 0.231373
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1094
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 94
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Global_Noise
+          Label: Global Noise
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: Add noise globally or isolate
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1095
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 95
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Material_1_Amount
+          Label: Material 1 Amount
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1096
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 96
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Material_2_Amount
+          Label: Material 2 Amount
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1097
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 97
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Material_3_Amount
+          Label: Material 3 Amount
+          GuiGroup: Advanced parameters/Lichen Splat
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1098
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 98
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Global_Global_Position
+          Label: Global Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.91
+        NumericalDescription:
+          DefaultValue: 0.91
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1099
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 99
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Global_Global_Contrast
+          Label: Global Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.67
+        NumericalDescription:
+          DefaultValue: 0.67
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1100
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 100
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Global_Blur_Mask
+          Label: Blur Mask
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1101
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 101
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Vertical_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.53
+        NumericalDescription:
+          DefaultValue: 0.53
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1102
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 102
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Vertical_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1103
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 103
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Vertical_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1104
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 104
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Vertical_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Vertical
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1105
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 105
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Horizontal_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1106
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 106
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Horizontal_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1107
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 107
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Horizontal_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1108
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 108
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Horizontal_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Horizontal
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1109
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 109
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1110
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 110
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Level
+          Label: Level
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.79
+        NumericalDescription:
+          DefaultValue: 0.79
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1111
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 111
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1112
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 112
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Convex_Convex_Edges_Width
+          Label: Convex Edges Width
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.54
+        NumericalDescription:
+          DefaultValue: 0.54
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1113
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 113
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Convex_Convex_Softness
+          Label: Convex Softness
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.38
+        NumericalDescription:
+          DefaultValue: 0.38
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1114
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 114
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Convex_Convex_Intensity
+          Label: Convex Intensity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.33
+        NumericalDescription:
+          DefaultValue: 0.33
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1115
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 115
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Concave_Concave_Softness
+          Label: Concave Softness
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.61
+        NumericalDescription:
+          DefaultValue: 0.61
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1116
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 116
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Concave_Concave_Edges_Width
+          Label: Concave Edges Width
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.22
+        NumericalDescription:
+          DefaultValue: 0.22
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1117
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 117
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Curvature_Concave_Concave_Intensity
+          Label: Concave Intensity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1118
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 118
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Incline_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1119
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 119
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Incline_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1120
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 120
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Incline_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1121
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 121
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Incline_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Incline
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1122
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 122
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Height_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1123
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 123
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Height_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1124
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 124
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Height_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1125
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 125
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Height_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Height
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1126
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 126
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Ambient_Occlusion_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1127
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 127
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Ambient_Occlusion_Occlude_or_Gather
+          Label: Occlude or Gather
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 4
+          WidgetType: 5
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 2
+          EnumValues:
+          - Value: 0
+            Label: Occlude
+          - Value: 1
+            Label: Gather
+    - rid: 1128
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 128
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Ambient_Occlusion_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.99
+        NumericalDescription:
+          DefaultValue: 0.99
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1129
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 129
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_Ambient_Occlusion_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1130
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 130
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_RGB_Mask_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1131
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 131
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_RGB_Mask_Input_Selection
+          Label: Input Selection
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/RGB Mask
+          GuiDescription: 'Gametextures style mask file utilizing RGB to mask out
+            certain materials
+
+'
+          Type: 4
+          WidgetType: 5
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 4
+          EnumValues:
+          - Value: 1
+            Label: Red
+          - Value: 2
+            Label: Green
+          - Value: 3
+            Label: Blue
+          - Value: 4
+            Label: Alpha
+    - rid: 1132
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 132
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_RGB_Mask_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1133
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 133
+        Description:
+          Identifier: Advanced_parameters_Lichen_Splat_Mask_RGB_Mask_RGB_Mask_Contrast
+          Label: RGB Mask Contrast
+          GuiGroup: Advanced parameters/Lichen Splat/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1134
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 134
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Hue
+          Label: Hue
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1135
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 135
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Saturation
+          Label: Saturation
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1136
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 136
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Lightness
+          Label: Lightness
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1137
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 137
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Normal_Intensity
+          Label: Normal Intensity
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.08
+        NumericalDescription:
+          DefaultValue: 0.08
+          MinValue: 0
+          MaxValue: 3
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1138
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 138
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 'Opacity - with mask
+
+'
+          Type: 0
+          WidgetType: 1
+        Data: 0.59
+        NumericalDescription:
+          DefaultValue: 0.59
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1139
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 139
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Global_Noise
+          Label: Global Noise
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: Add noise globally or isolate
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1140
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 140
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Material_1_Sand_Amount
+          Label: Material 1 Sand Amount
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1141
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 141
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Material_2_Sand_Amount
+          Label: Material 2 Sand Amount
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1142
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 142
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Material_3_Sand_Amount
+          Label: Material 3 Sand Amount
+          GuiGroup: Advanced parameters/Sandy Surface
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1143
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 143
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Global_Global_Position
+          Label: Global Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.51
+        NumericalDescription:
+          DefaultValue: 0.51
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1144
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 144
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Global_Global_Contrast
+          Label: Global Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1145
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 145
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Global_Blur_Mask
+          Label: Blur Mask
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Global
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1146
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 146
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Vertical_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.53
+        NumericalDescription:
+          DefaultValue: 0.53
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1147
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 147
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Vertical_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1148
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 148
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Vertical_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Vertical
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1149
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 149
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Vertical_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Vertical
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1150
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 150
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Horizontal_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1151
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 151
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Horizontal_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1152
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 152
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Horizontal_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Horizontal
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1153
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 153
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Horizontal_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Horizontal
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1154
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 154
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Level
+          Label: Level
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.79
+        NumericalDescription:
+          DefaultValue: 0.79
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1155
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 155
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1156
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 156
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1157
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 157
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Convex_Convex_Edges_Width
+          Label: Convex Edges Width
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.54
+        NumericalDescription:
+          DefaultValue: 0.54
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1158
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 158
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Convex_Convex_Softness
+          Label: Convex Softness
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.38
+        NumericalDescription:
+          DefaultValue: 0.38
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1159
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 159
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Convex_Convex_Intensity
+          Label: Convex Intensity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature/Convex
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.33
+        NumericalDescription:
+          DefaultValue: 0.33
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1160
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 160
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Concave_Concave_Edges_Width
+          Label: Concave Edges Width
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.22
+        NumericalDescription:
+          DefaultValue: 0.22
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1161
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 161
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Concave_Concave_Softness
+          Label: Concave Softness
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.61
+        NumericalDescription:
+          DefaultValue: 0.61
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1162
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 162
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Curvature_Concave_Concave_Intensity
+          Label: Concave Intensity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Curvature/Concave
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1163
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 163
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Ambient_Occlusion_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1164
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 164
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Ambient_Occlusion_Occlude_or_Gather
+          Label: Occlude or Gather
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 4
+          WidgetType: 5
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 2
+          EnumValues:
+          - Value: 0
+            Label: Occlude
+          - Value: 1
+            Label: Gather
+    - rid: 1165
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 165
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Ambient_Occlusion_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.02
+        NumericalDescription:
+          DefaultValue: 0.02
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1166
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 166
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Ambient_Occlusion_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1167
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 167
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Incline_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1168
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 168
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Incline_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1169
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 169
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Incline_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Incline
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1170
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 170
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Incline_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Incline
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1171
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 171
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Height_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1172
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 172
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Height_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.52
+        NumericalDescription:
+          DefaultValue: 0.52
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1173
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 173
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Height_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Height
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1174
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 174
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_Height_Invert
+          Label: Invert
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/Height
+          GuiDescription: 
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1175
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 175
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_RGB_Mask_Input_Selection
+          Label: Input Selection
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/RGB Mask
+          GuiDescription: 'Gametextures style mask file utilizing RGB to mask out
+            certain materials
+
+'
+          Type: 4
+          WidgetType: 5
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 4
+          EnumValues:
+          - Value: 1
+            Label: Red
+          - Value: 2
+            Label: Green
+          - Value: 3
+            Label: Blue
+          - Value: 4
+            Label: Alpha
+    - rid: 1176
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 176
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_RGB_Mask_Position
+          Label: Position
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1177
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 177
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_RGB_Mask_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1178
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 178
+        Description:
+          Identifier: Advanced_parameters_Sandy_Surface_Mask_RGB_Mask_RGB_Mask_Contrast
+          Label: RGB Mask Contrast
+          GuiGroup: Advanced parameters/Sandy Surface/Mask/RGB Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1179
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 179
+        Description:
+          Identifier: Advanced_parameters_Leak_Opacity
+          Label: Opacity
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.98
+        NumericalDescription:
+          DefaultValue: 0.98
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1180
+      type: {class: SubstanceInputFloat4, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 180
+        Description:
+          Identifier: Advanced_parameters_Leak_Stain_Color
+          Label: Stain Color
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 3
+          WidgetType: 3
+        Data: {x: 0.109804, y: 0.109804, z: 0.109804, w: 1}
+        NumericalDescription:
+          DefaultValue: {x: 0.109804, y: 0.109804, z: 0.109804, w: 1}
+          MinValue: {x: 0, y: 0, z: 0, w: 0}
+          MaxValue: {x: 1, y: 1, z: 1, w: 1}
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1181
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 181
+        Description:
+          Identifier: Advanced_parameters_Leak_Glossiness
+          Label: Glossiness
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 0
+          WidgetType: 3
+        Data: 0.203922
+        NumericalDescription:
+          DefaultValue: 0.203922
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1182
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 182
+        Description:
+          Identifier: Advanced_parameters_Leak_Leak_Direction
+          Label: Leak Direction
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 4
+          WidgetType: 5
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 4
+          EnumValues:
+          - Value: 0
+            Label: Fade Down
+          - Value: 1
+            Label: Fade Left
+          - Value: 2
+            Label: Fade Up
+          - Value: 3
+            Label: Fade Right
+    - rid: 1183
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 183
+        Description:
+          Identifier: Advanced_parameters_Leak_Material_1_Amount
+          Label: Material 1 Amount
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1184
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 184
+        Description:
+          Identifier: Advanced_parameters_Leak_Material_2_Amount
+          Label: Material 2 Amount
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1185
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 185
+        Description:
+          Identifier: Advanced_parameters_Leak_Material_3_Amount
+          Label: Material 3 Amount
+          GuiGroup: Advanced parameters/Leak
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1186
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 186
+        Description:
+          Identifier: Advanced_parameters_Leak_Mask_Level
+          Label: Level
+          GuiGroup: Advanced parameters/Leak/Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.85
+        NumericalDescription:
+          DefaultValue: 0.85
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1187
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 187
+        Description:
+          Identifier: Advanced_parameters_Leak_Mask_Contrast
+          Label: Contrast
+          GuiGroup: Advanced parameters/Leak/Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.46
+        NumericalDescription:
+          DefaultValue: 0.46
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1188
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 188
+        Description:
+          Identifier: Advanced_parameters_Leak_Mask_Variation
+          Label: Variation
+          GuiGroup: Advanced parameters/Leak/Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.48
+        NumericalDescription:
+          DefaultValue: 0.48
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1189
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 189
+        Description:
+          Identifier: Advanced_parameters_Leak_Mask_Length
+          Label: Length
+          GuiGroup: Advanced parameters/Leak/Mask
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 8
+        NumericalDescription:
+          DefaultValue: 8
+          MinValue: 0
+          MaxValue: 8
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1190
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 190
+        Description:
+          Identifier: Advanced_parameters_Rust_Spreading
+          Label: Spreading
+          GuiGroup: Advanced parameters/Rust
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1191
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 191
+        Description:
+          Identifier: Advanced_parameters_Rust_Age
+          Label: Age
+          GuiGroup: Advanced parameters/Rust
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.58
+        NumericalDescription:
+          DefaultValue: 0.58
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1192
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 192
+        Description:
+          Identifier: Advanced_parameters_Rust_Glossiness
+          Label: Glossiness
+          GuiGroup: Advanced parameters/Rust
+          GuiDescription: 
+          Type: 0
+          WidgetType: 3
+        Data: 0.121569
+        NumericalDescription:
+          DefaultValue: 0.121569
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1193
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 193
+        Description:
+          Identifier: Advanced_parameters_Rust_Material_1_Rust_Amount
+          Label: Material 1 Rust Amount
+          GuiGroup: Advanced parameters/Rust
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1194
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 194
+        Description:
+          Identifier: Advanced_parameters_Rust_Material_2_Rust_Amount
+          Label: Material 2 Rust Amount
+          GuiGroup: Advanced parameters/Rust
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1195
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 195
+        Description:
+          Identifier: Advanced_parameters_Rust_Material_3_Rust_Amount
+          Label: Material 3 Rust Amount
+          GuiGroup: Advanced parameters/Rust
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
