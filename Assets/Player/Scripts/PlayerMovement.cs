@@ -9,8 +9,9 @@ using UnityEngine;
 
 using System;
 
-[RequireComponent(typeof(CharacterController))]
-public class Movement : MonoBehaviour {
+//[RequireComponent(typeof(Rigidbody))]
+public class PlayerMovement : MonoBehaviour {
+    /*
     [Serializable]
     public class Walk {
         [Header("Configuration")]
@@ -115,21 +116,48 @@ public class Movement : MonoBehaviour {
     // Variables
     Vector3 vel;
     Vector3 rotation;
+    
+    /// <summary>
+    /// Return current jump height for the player dependent on their mode
+    /// </summary>
+    public float GetCurrentJumpHeight(){
+        return walk.jump;
+    }
 
+    /// <summary>
+    /// Return current speed for the player dependent on their mode
+    /// </summary>
+    public float GetCurrentSpeed(){
+        return walk.speed;
+    }
+
+    /// <summary>
+    /// Return current speed for the player dependent on their mode
+    /// </summary>
+    public float GetCurrentGravity(){
+        return walk.gravity;
+    }
+
+    /// <summary>
+    /// Initialize
+    /// </summary>
     void Start(){
         // Setup
         cont = GetComponent<CharacterController>();
         
-        Controls.Mouse.LockMouse();
+        PlayerControls.Mouse.LockMouse();
 
         // Vars
         vel = Vector3.zero;
         rotation = Vector3.zero;
     }
 
+    /// <summary>
+    /// Applies rotation to both the body of the player and the head
+    /// </summary>
     void ApplyRotation(){
         // Get Mouse Pos
-        Vector2 mPos = Controls.Mouse.GetMousePosition(false, Time.deltaTime);
+        Vector2 mPos = PlayerControls.Mouse.GetMousePosition(false, Time.deltaTime);
 
         // Left, Right
         rotation.y += mPos.x; 
@@ -140,24 +168,29 @@ public class Movement : MonoBehaviour {
 
         // Apply
 		//Head.transform.eulerAngles = original * look.sensitivity;
-        transform.eulerAngles = new Vector3(0f, rotation.y, 0f) * look.sensitivity;
+        /*transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x, 
+            rotation.y, 
+            transform.eulerAngles.z
+        ) * look.sensitivity;*/
+    
+    /*
     }
 
+    /// <summary>
+    /// Applies physics to the player in terms of movement 
+    /// </summary>
     void ApplyPhysics(){
-        // Gravity
-        vel.y += walk.gravity * Time.deltaTime;
-
         // Apply
         cont.Move(vel * Time.deltaTime);
 
         // Gravity
-        // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
         if (cont.isGrounded){
-            // Reset gravity
-            vel.y = 0f;
+            // Apply offset to ensure cont.isGrounded works correctly
+            vel.y = -cont.stepOffset / Time.deltaTime;;
 
             // Movement
-            Vector2 move = Controls.Movement.GetAxis(walk.speed); 
+            Vector2 move = PlayerControls.Movement.GetAxis(walk.speed); 
 
             if (!(move.x == 0f && move.y == 0f)){
                 vel = new Vector3(
@@ -174,14 +207,21 @@ public class Movement : MonoBehaviour {
             }
 
             // Jump
-            if (Controls.Movement.GetJump()){
+            if (PlayerControls.Movement.GetJump()){
+                Debug.Log("Jump!");
                 vel.y += walk.jump;
             }
+        } else {
+            // Apply gravity to ensure cont.isGrounded works correctly
+            vel.y += walk.gravity * Time.deltaTime;
         }
     }
 
+    /// <summary>
+    /// Update rotation and physics
+    /// </summary>
     void Update(){
         ApplyRotation();
         ApplyPhysics();
-    }
+    }*/
 }

@@ -12,7 +12,7 @@ using UnityEngine;
 /// Handles the controls
 /// </summary>
 
-public static class Controls {
+public static class PlayerControls {
     public static class Mouse {
         static int reset;
 

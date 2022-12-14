@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animation : MonoBehaviour {
+public class PlayerAnimation : MonoBehaviour {
     public enum States {
         Idle,
         Jumping,
@@ -23,22 +23,22 @@ public class Animation : MonoBehaviour {
         state = States.Idle;
     }
 
-    void SetState(Animation.States _state){
+    void SetState(PlayerAnimation.States _state){
         if (state != _state){
             switch (state){
-                case Animation.States.Idle:
+                case PlayerAnimation.States.Idle:
                     // 
                     break;
-                case Animation.States.Jumping:
+                case PlayerAnimation.States.Jumping:
                     // 
                     break;
-                case Animation.States.Moving:
+                case PlayerAnimation.States.Moving:
                     // 
                     break;
-                case Animation.States.Sprinting:
+                case PlayerAnimation.States.Sprinting:
                     // 
                     break;
-                case Animation.States.Crouching:
+                case PlayerAnimation.States.Crouching:
                     // 
                     break;
             }
@@ -48,14 +48,14 @@ public class Animation : MonoBehaviour {
     }
 
     public void Jump(){
-        SetState(Animation.States.Jumping);
+        SetState(PlayerAnimation.States.Jumping);
     }
 
     public void Idle(){
-        SetState(Animation.States.Idle);
+        SetState(PlayerAnimation.States.Idle);
     }
 
     public void Move(){
-        SetState(Animation.States.Moving);
+        SetState(PlayerAnimation.States.Moving);
     }
 }
