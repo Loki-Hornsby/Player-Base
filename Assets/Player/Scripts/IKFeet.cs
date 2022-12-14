@@ -66,6 +66,8 @@ public class IKFeet : MonoBehaviour {
         [Header("Raycast")]
         public LayerMask RaycastLayers;
         public float RaycastDistance;
+        public float RaycastTipForward;
+        public float RaycastOriginForward;
 
         // Configuration
         [Header("Configuration")]
@@ -110,32 +112,51 @@ public class IKFeet : MonoBehaviour {
             if (setup){
                 foreach (var joint in joints){
                     if (joint.isSetup()){
-                         // Offsets
-                        Vector3 HO_FO = new Vector3(0f, joint.heightOffset, 0f) + joint.reference.transform.forward * joint.forwardOffset;
+                        // Offsets
+                        Vector3 OriginForward = joint.reference.transform.forward * RaycastOriginForward;
+                        Vector3 TipForward = joint.reference.transform.forward * RaycastTipForward;
 
-                        // Raycast
-                        RaycastHit hit;
+                        Vector3 Offset = new Vector3(0f, joint.heightOffset, 0f) + joint.reference.transform.forward * joint.forwardOffset;
+
+                        // Raycast Origin
+                        RaycastHit hitOrigin;
 
                         Physics.Raycast(
-                            joint.root.transform.position + HO_FO,
+                            joint.root.transform.position + OriginForward,
                             -Vector3.up, 
-                            out hit, 
+                            out hitOrigin, 
+                            RaycastDistance, 
+                            RaycastLayers
+                        );
+
+                        // Raycast Tip
+                        RaycastHit hitTip;
+
+                        Physics.Raycast(
+                            joint.root.transform.position + TipForward,
+                            -Vector3.up, 
+                            out hitTip, 
                             RaycastDistance, 
                             RaycastLayers
                         );
 
                         // Hit point
-                        Vector3 hp = hit.point;
+                        Vector3 hpA = hitOrigin.point - OriginForward;
+                        Vector3 hpB = hitTip.point - TipForward;
+
+                        Debug.DrawLine(hpA + OriginForward, hpB + TipForward, Color.green, 0.25f);
+
+                        Vector3 hpAvg = (hpA + hpB) / 2f;
 
                         // Distance from floor
-                        dff = Vector3.Distance(joint.root.transform.position, hp);
+                        dff = Vector3.Distance(joint.root.transform.position, hpAvg);
 
                         // Percentage of jump
                         //percJump = ((move.GetCurrentJumpHeight()*move.GetCurrentGravity())/dff);
 
                         // Automatic movement handling (i think this part is pretty nifty!)
                         tf += t;
-                        joint.target.transform.position = hp + HO_FO; 
+                        joint.target.transform.position = hpAvg + Offset; 
                             
                             /*- new Vector3(
                             0f, 
@@ -147,7 +168,7 @@ public class IKFeet : MonoBehaviour {
                         );*/
 
                         // Hint
-                        joint.hint.transform.position = joint.root.transform.position + HO_FO;
+                        joint.hint.transform.position = joint.root.transform.position + Offset;
                     }
                 }
             }
