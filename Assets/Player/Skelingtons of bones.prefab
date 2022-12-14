@@ -3258,12 +3258,12 @@ MonoBehaviour:
       target: {fileID: 805030279115830536}
       hint: {fileID: 805030280584439360}
       forwardOffset: 0.05
-      heightOffset: 1
+      heightOffset: 0.05
     - reference: {fileID: 875157569}
       target: {fileID: 3524825094350760904}
       hint: {fileID: 3524825094385063235}
-      forwardOffset: 1
-      heightOffset: 1
+      forwardOffset: 0.175
+      heightOffset: 0
   - RaycastLayers:
       serializedVersion: 2
       m_Bits: 8
@@ -3274,12 +3274,12 @@ MonoBehaviour:
       target: {fileID: 2071070186663035751}
       hint: {fileID: 944123825717225164}
       forwardOffset: 0.05
-      heightOffset: 1
+      heightOffset: 0.05
     - reference: {fileID: 521439059}
       target: {fileID: 3524825092832323918}
       hint: {fileID: 3524825093091639274}
-      forwardOffset: 1
-      heightOffset: 1
+      forwardOffset: 0.175
+      heightOffset: 0
 --- !u!114 &8648850686435095040
 MonoBehaviour:
   m_ObjectHideFlags: 0

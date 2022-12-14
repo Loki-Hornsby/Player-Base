@@ -110,11 +110,14 @@ public class IKFeet : MonoBehaviour {
             if (setup){
                 foreach (var joint in joints){
                     if (joint.isSetup()){
+                         // Offsets
+                        Vector3 HO_FO = new Vector3(0f, joint.heightOffset, 0f) + joint.reference.transform.forward * joint.forwardOffset;
+
                         // Raycast
                         RaycastHit hit;
 
                         Physics.Raycast(
-                            joint.root.transform.position, 
+                            joint.root.transform.position + HO_FO,
                             -Vector3.up, 
                             out hit, 
                             RaycastDistance, 
@@ -130,13 +133,9 @@ public class IKFeet : MonoBehaviour {
                         // Percentage of jump
                         //percJump = ((move.GetCurrentJumpHeight()*move.GetCurrentGravity())/dff);
 
-                        // Offsets
-                        Vector3 HO = new Vector3(0f, joint.heightOffset, 0f);
-                        Vector3 FO = joint.reference.transform.forward * joint.forwardOffset;
-
                         // Automatic movement handling (i think this part is pretty nifty!)
                         tf += t;
-                        joint.target.transform.position = hp + HO + FO; 
+                        joint.target.transform.position = hp + HO_FO; 
                             
                             /*- new Vector3(
                             0f, 
@@ -148,7 +147,7 @@ public class IKFeet : MonoBehaviour {
                         );*/
 
                         // Hint
-                        joint.hint.transform.position = joint.root.transform.position + HO + FO;
+                        joint.hint.transform.position = joint.root.transform.position + HO_FO;
                     }
                 }
             }
