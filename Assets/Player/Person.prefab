@@ -1249,7 +1249,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3349663870116464101}
-  m_LocalRotation: {x: 0.0000028908253, y: -0.00000013411045, z: -0.0070271045, w: 0.9999754}
+  m_LocalRotation: {x: 0.70708936, y: 0.0049673864, z: -0.0049673864, w: 0.70708936}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1257,7 +1257,7 @@ Transform:
   - {fileID: 3718783838349226365}
   m_Father: {fileID: 2650500652054740686}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -0.805}
 --- !u!1 &3376668324164948626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1312,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3423765822967489652}
-  m_LocalRotation: {x: 0.49912703, y: -0.50087154, z: -0.49912694, w: 0.5008715}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1321,7 +1321,7 @@ Transform:
   - {fileID: 597932517482391317}
   m_Father: {fileID: 4248095120830555306}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &3495505853270945779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,8 +1528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803a86fa5d45061439d46fde84153991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  feet: {fileID: 9201914546162323150}
   walk:
-    useDefaults: 0
+    useDefaults: 1
     speed: 0
     gravity: 0
     jump: 0
@@ -2519,7 +2520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6213615965763243497}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -2.441, z: 0.748}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3056,7 +3057,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8090433613305992866}
-  m_LocalRotation: {x: -0.49932924, y: 0.50066996, z: 0.49932915, w: 0.5006699}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3065,7 +3066,7 @@ Transform:
   - {fileID: 3607396869169309997}
   m_Father: {fileID: 2650500652054740686}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &8166874818558293081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b417e5cc6fc7c9c41935ec859783450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: 7576619035969771761}
+  movement: {fileID: 7576619035969771761}
   Feet:
   - RaycastLayers:
       serializedVersion: 2
@@ -3513,32 +3514,38 @@ MonoBehaviour:
     RaycastDistance: 5
     RaycastTipForward: 0.2
     RaycastOriginForward: 0.1
-    HintHeightOffset: 10
     joints:
     - reference: {fileID: 8166874818558293087}
       target: {fileID: 2783939742521687171}
       hint: {fileID: 2783939743150387147}
-      forwardOffset: 0.25
+      forwardOffset: 0
+      speed: 1
+      amplitude: 1
     - reference: {fileID: 8947635744872467497}
       target: {fileID: 3950792365724257267}
       hint: {fileID: 9173287098819034638}
       forwardOffset: 0.3
+      speed: 1
+      amplitude: 0
   - RaycastLayers:
       serializedVersion: 2
       m_Bits: 9
     RaycastDistance: 5
     RaycastTipForward: 0.2
     RaycastOriginForward: 0.1
-    HintHeightOffset: 10
     joints:
     - reference: {fileID: 2194166796901211451}
       target: {fileID: 3545295978897263340}
       hint: {fileID: 2347698299523477319}
-      forwardOffset: 0.25
+      forwardOffset: 0
+      speed: 1
+      amplitude: 1
     - reference: {fileID: 2531243308101828281}
       target: {fileID: 7889373818690999795}
       hint: {fileID: 9206081009300707368}
       forwardOffset: 0.3
+      speed: 1
+      amplitude: 0
 --- !u!114 &7640831703246275613
 MonoBehaviour:
   m_ObjectHideFlags: 0

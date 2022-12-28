@@ -94,8 +94,8 @@ public class P_Movement : MonoBehaviour {
 
     // References
     [Header("References")]
+    public IKFeet feet;
     CharacterController cont;
-    Animation anim;
     
     // Properties
     [Header("Movement Types")]
@@ -105,55 +105,67 @@ public class P_Movement : MonoBehaviour {
     public Crawl crawl;
     
     // Velocity
-    Vector3 vel;
+    [System.NonSerialized] public Vector3 velocity;
 
     void Start(){
-        // Setup
+        // References
         cont = GetComponent<CharacterController>();
-        anim = GetComponent<Animation>();
-        
+
+        // Behaviors
+        walk.Setup();
+        run.Setup();
+        crouch.Setup();
+        crawl.Setup();
+
+        // Mouse
         P_Controls.Mouse.LockMouse();
 
-        // Vars
-        vel = Vector3.zero;
+        // Velocity
+        velocity = Vector3.zero;
     }
 
     /// <summary>
     /// Applies physics to the player in terms of movement 
     /// </summary>
     void Update(){
-        /*
-        // Apply
-        cont.Move(vel * Time.deltaTime);
-
-        // Gravity
-        // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
-        if (cont.isGrounded){
-            // Apply offset to ensure cont.isGrounded works correctly
-            vel.y = -cont.stepOffset / Time.deltaTime;
-
-            // Movement
+        if (feet.setup){
             Vector2 move = P_Controls.Movement.GetAxis(walk.speed); 
+            velocity = new Vector3(move.y, 0f, move.x);
 
-            if (!(move.x == 0f && move.y == 0f)){
-                vel = new Vector3(
-                    (Body.transform.forward.x * move.y) + (Body.transform.right.x * move.x),
-                    vel.y,
-                    (Body.transform.forward.z * move.y) + (Body.transform.right.z * move.x)
-                );
-            } else { // Coming to a idle
-                vel = new Vector3(
-                    0f,
-                    0f,
-                    0f
-                );
-            }
+            cont.Move(velocity * Time.deltaTime);
+            /*
+            // Apply
+            cont.Move(vel * Time.deltaTime);
 
-            // Jump
-            if (P_Controls.Movement.GetJump()){
-                Debug.Log("Jump!");
-                vel.y += walk.jump;
-            }
-        }*/
+            // Gravity
+            // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
+            if (cont.isGrounded){
+                // Apply offset to ensure cont.isGrounded works correctly
+                vel.y = -cont.stepOffset / Time.deltaTime;
+
+                // Movement
+                Vector2 move = P_Controls.Movement.GetAxis(walk.speed); 
+
+                if (!(move.x == 0f && move.y == 0f)){
+                    vel = new Vector3(
+                        (Body.transform.forward.x * move.y) + (Body.transform.right.x * move.x),
+                        vel.y,
+                        (Body.transform.forward.z * move.y) + (Body.transform.right.z * move.x)
+                    );
+                } else { // Coming to a idle
+                    vel = new Vector3(
+                        0f,
+                        0f,
+                        0f
+                    );
+                }
+
+                // Jump
+                if (P_Controls.Movement.GetJump()){
+                    Debug.Log("Jump!");
+                    vel.y += walk.jump;
+                }
+            }*/
+        }
     }
 }

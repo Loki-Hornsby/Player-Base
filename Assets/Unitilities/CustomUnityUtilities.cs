@@ -7,10 +7,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
-// Add repeating patterns here!
+// Version: 28.12.22
 
 public static class Unitilities {
+    public static class Probability {
+        public static bool Check(int percentage, int range = 100){ // By default this returns a 1 in 100 chance
+            int var = UnityEngine.Random.Range(0, range + 1);
+
+            return (var == percentage);
+        }
+    }
+
+    public static class Enums {
+        public static Enum GetRandomEnumValue(Type t){
+            return Enum.GetValues(t)          // get values from Type provided
+                .OfType<Enum>()               // casts to Enum
+                .OrderBy(e => Guid.NewGuid()) // mess with order of results
+                .FirstOrDefault();            // take first item in result
+        }
+    }
+
     public static class Angles {
         public static float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
             return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
@@ -31,28 +49,6 @@ public static class Unitilities {
             angle = -angle%360;
 
             return 360-angle;
-        }
-    }
-
-    public class Counter {
-        float _t;
-
-        public void Update(float input){
-            _t += input;
-        }
-
-        public void Set(float input){
-            _t = input;
-        }
-
-        public T t <T>(){
-            if (typeof(T) == typeof(int)){
-                _t = Mathf.FloorToInt(_t);
-            }
-
-            T val = (T) Convert.ChangeType(_t, typeof(T));
-
-            return val;
         }
     }
 
@@ -79,6 +75,21 @@ public static class Unitilities {
             }
 
             return a | b;
+        }
+
+        public static Vector3 ClampVector3(Vector3 value, Vector3 min, Vector3 max){
+            value.x = Mathf.Clamp(value.x, min.x, max.x);
+            value.y = Mathf.Clamp(value.y, min.y, max.y);
+            value.z = Mathf.Clamp(value.z, min.z, max.z);
+
+            return value;
+        }
+
+        public static Vector2 ClampVector2(Vector2 value, Vector2 min, Vector2 max){
+            value.x = Mathf.Clamp(value.x, min.x, max.x);
+            value.y = Mathf.Clamp(value.y, min.y, max.y);
+
+            return value;
         }
     }
 }

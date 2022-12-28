@@ -31,6 +31,8 @@ public class IKFeet : MonoBehaviour {
 
             [Header("Configuration")]
             public float forwardOffset;
+            public float speed;
+            public float amplitude;
             
             // Read Only
             [System.NonSerialized] public TwoBoneIKConstraintData data;
@@ -38,16 +40,25 @@ public class IKFeet : MonoBehaviour {
             [System.NonSerialized] public GameObject mid;
             [System.NonSerialized] public GameObject tip;
 
+            /// <summary>
+            /// Check if joint is setup
+            /// </summary>
             public bool isSetup(){
                 return setup;
             }
 
+            /// <summary>
+            /// Setup joint
+            /// </summary>
             public void Setup(){
                 reference.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
 
                 setup = false;
             }
 
+            /// <summary>
+            /// Complete setup of joint
+            /// </summary>
             public void Complete(){
                 // Storage
                 data = reference.data;
@@ -68,13 +79,16 @@ public class IKFeet : MonoBehaviour {
         public float RaycastTipForward;
         public float RaycastOriginForward;
 
-        // Configuration
-        [Header("Configuration")]
-        public float HintHeightOffset;
-
         // References
         [Header("Joints")]
         public List<Joint> joints;
+
+        /// <summary>
+        /// Check if foot is setup
+        /// </summary>
+        public bool isSetup(){
+            return setup;
+        }
 
         /// <summary>
         /// Setup Joints and Feet
@@ -100,17 +114,30 @@ public class IKFeet : MonoBehaviour {
         }
 
         /// <summary>
+        /// Calculate the magic sin number for the movement animation
+        /// </summary>
+        float CalculateAnimation(float speed, float amplitude, float x, bool cos){
+            float val = 0f;
+            float p = Time.fixedTime * Mathf.PI * speed;
+
+            if (cos){
+                val += Mathf.Cos(p);
+            } else {
+                val += Mathf.Sin(p);
+            }
+
+            return (val * amplitude) * x;
+        }
+
+        /// <summary>
         /// Update Joints and Feet
         /// </summary>
-        public void Update(float t, P_Movement move){
+        public void Update(float t, P_Movement movement, int index){
             if (setup){
                 foreach (var joint in joints){
                     if (joint.isSetup()){
-                        // Offsets
-                        Vector3 OriginForward = joint.reference.transform.forward * RaycastOriginForward;
-                        Vector3 TipForward = joint.reference.transform.forward * RaycastTipForward;
-
                         // Raycast Origin
+                        Vector3 OriginForward = joint.reference.transform.forward * RaycastOriginForward;
                         RaycastHit hitOrigin;
 
                         Physics.Raycast(
@@ -122,6 +149,7 @@ public class IKFeet : MonoBehaviour {
                         );
 
                         // Raycast Tip
+                        Vector3 TipForward = joint.reference.transform.forward * RaycastTipForward;
                         RaycastHit hitTip;
 
                         Physics.Raycast(
@@ -140,28 +168,37 @@ public class IKFeet : MonoBehaviour {
 
                         Vector3 hpAvg = (hpA + hpB) / 2f;
 
-                        // Automatic movement handling
-                        joint.target.transform.position = hpAvg + (joint.reference.transform.forward * joint.forwardOffset) + new Vector3(
-                            0f,
-                            0.5f + (Mathf.Sin (Time.fixedTime * Mathf.PI * 0.5f) * 1f),
-                            0f
+                        // Target
+                        // ((index % 2f == 0f) ? 1f : -1f)
+
+                        Vector3 ForwardOffset = (joint.reference.transform.forward * joint.forwardOffset);
+                        Vector3 min = hpAvg + ForwardOffset;
+                        Vector3 max = min + (
+                            new Vector3(
+                                CalculateAnimation(joint.speed, joint.amplitude/2f, movement.velocity.x, true) * -1f,
+                                CalculateAnimation(joint.speed, joint.amplitude/2f, movement.velocity.x, false),
+                                0f
+                            ) * ((index % 2f == 0f) ? 1f : -1f)
                         );
 
+                        joint.target.transform.position = max; //Unitilities.Maths.ClampVector3(max, min, max);
+
                         // Hint
-                        joint.hint.transform.position = joint.root.transform.position + new Vector3(0f, HintHeightOffset, 0f);
+                        joint.hint.transform.position = joint.target.transform.position;
                     }
                 }
             }
         }
     }   
 
+    [System.NonSerialized] public bool setup;
+    int index;
+
     [Header("References")]
-    public P_Movement move;
+    public P_Movement movement;
 
     [Header("List o' Feet")]
     public List<Foot> Feet;
-
-    //public void 
 
     /// <summary>
     /// Setup Feet
@@ -176,9 +213,18 @@ public class IKFeet : MonoBehaviour {
     /// Update Feet
     /// </summary>
     void Update(){
+        index = 0;
+
         // Feet
         foreach (var foot in Feet){
-            foot.Update(Time.deltaTime, move);
+            // Update index counter
+            if (foot.isSetup()) index++;
+
+            // Setup condition
+            if (!setup && index == Feet.Count) setup = true;
+               
+            // Update feet
+            foot.Update(Time.deltaTime, movement, index);
         }
     }
 }
