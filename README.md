@@ -9,4 +9,4 @@ A base for a 3D player, enemy, NPC, etc.
 # Features
 - Movement ~ WIP
 - IK (Procedural Animation)
-- Adobe material support
+- Adobe Substance material support
