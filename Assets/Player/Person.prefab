@@ -1530,25 +1530,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feet: {fileID: 9201914546162323150}
   walk:
+    enabled: 1
     useDefaults: 1
     speed: 0
     gravity: 0
     jump: 0
   run:
-    enabled: 0
-    useDefaults: 0
+    enabled: 1
+    useDefaults: 1
     speed: 0
     gravity: 0
     jump: 0
   crouch:
-    enabled: 0
-    useDefaults: 0
+    enabled: 1
+    useDefaults: 1
     speed: 0
     gravity: 0
     jump: 0
   crawl:
-    enabled: 0
-    useDefaults: 0
+    enabled: 1
+    useDefaults: 1
     speed: 0
     gravity: 0
     jump: 0
@@ -1564,7 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74e730ec4b4c9946aa5e17bfc8983a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  camera: {fileID: 4942384547442727034}
 --- !u!143 &8124473648272375277
 CharacterController:
   m_ObjectHideFlags: 0

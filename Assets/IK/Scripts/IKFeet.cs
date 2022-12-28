@@ -23,6 +23,7 @@ public class IKFeet : MonoBehaviour {
         public class Joint {
             // General
             bool setup;
+            [System.NonSerialized] public float t;
 
             [Header("References")]
             public TwoBoneIKConstraint reference; 
@@ -116,7 +117,7 @@ public class IKFeet : MonoBehaviour {
         /// <summary>
         /// Calculate the magic sin number for the movement animation
         /// </summary>
-        float CalculateAnimation(float speed, float amplitude, float x, bool cos){
+        float CalculateAnimation(float speed, float amplitude, bool cos){
             float val = 0f;
             float p = Time.fixedTime * Mathf.PI * speed;
 
@@ -126,7 +127,7 @@ public class IKFeet : MonoBehaviour {
                 val += Mathf.Sin(p);
             }
 
-            return (val * amplitude) * x;
+            return (val * amplitude);
         }
 
         /// <summary>
@@ -160,28 +161,32 @@ public class IKFeet : MonoBehaviour {
                             RaycastLayers
                         );
 
-                        // Hit point
+                        // Hit points
                         Vector3 hpA = hitOrigin.point - OriginForward;
                         Vector3 hpB = hitTip.point - TipForward;
 
-                        Debug.DrawLine(hpA + OriginForward, hpB + TipForward, Color.green, 0.25f);
-
+                        // AVG between hit points
                         Vector3 hpAvg = (hpA + hpB) / 2f;
 
-                        // Target
-                        // ((index % 2f == 0f) ? 1f : -1f)
-
+                        // Forward offset
                         Vector3 ForwardOffset = (joint.reference.transform.forward * joint.forwardOffset);
-                        Vector3 min = hpAvg + ForwardOffset;
-                        Vector3 max = min + (
-                            new Vector3(
-                                CalculateAnimation(joint.speed, joint.amplitude/2f, movement.velocity.x, true) * -1f,
-                                CalculateAnimation(joint.speed, joint.amplitude/2f, movement.velocity.x, false),
+
+                        // Min and Max (Foot Walk Cycle Animation (F.W.C.A ~ O.W.C.A anyone?))
+                        Vector3 min = hpAvg + ForwardOffset; // Adds offsets
+                        Vector3 max = min + ( // Calculates walk motion (produces a kind of circle shape)
+                            new Vector3( // *-1f so the foot goes in the correct direction
+                                CalculateAnimation(movement.velocity.x, joint.amplitude/2f, true) * -1f, // Cos : true
+                                CalculateAnimation(movement.velocity.x, joint.amplitude/2f, false), // Sin : false
                                 0f
-                            ) * ((index % 2f == 0f) ? 1f : -1f)
+                            ) * ((index % 2f == 0f) ? 1f : -1f) // Allows the player to moonwalk haha!
                         );
 
-                        joint.target.transform.position = max; //Unitilities.Maths.ClampVector3(max, min, max);
+                        // Reset height
+                        if (max.y < min.y) max.y = min.y;
+
+                        // Target Lerp
+                        joint.t = t / 0.25f;
+                        joint.target.transform.position = Vector3.Lerp(joint.target.transform.position, max, joint.t);
 
                         // Hint
                         joint.hint.transform.position = joint.target.transform.position;

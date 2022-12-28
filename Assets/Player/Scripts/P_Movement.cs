@@ -15,6 +15,7 @@ public class P_Movement : MonoBehaviour {
     [Serializable]
     public class Walk {
         [Header("Configuration")]
+        public bool enabled; // TODO
         public bool useDefaults;
 
         [Header("General")]
@@ -35,7 +36,7 @@ public class P_Movement : MonoBehaviour {
     [Serializable]
     public class Run {
         [Header("Configuration")]
-        public bool enabled;
+        public bool enabled; // TODO
         public bool useDefaults;
 
         [Header("General")]
@@ -43,9 +44,9 @@ public class P_Movement : MonoBehaviour {
         public float gravity;
         public float jump;
 
-        public void Setup(){
+        public void Setup(Walk walk){
             if (useDefaults){
-                speed = 1.5f;
+                speed = walk.speed * 2f;
                 gravity = -9.81f;
                 jump = 0f;
             }
@@ -55,7 +56,7 @@ public class P_Movement : MonoBehaviour {
     [Serializable]
     public class Crouch {
         [Header("Configuration")]
-        public bool enabled;
+        public bool enabled; // TODO
         public bool useDefaults;
 
         [Header("General")]
@@ -63,9 +64,9 @@ public class P_Movement : MonoBehaviour {
         public float gravity;
         public float jump;
 
-        public void Setup(){
+        public void Setup(Walk walk){
             if (useDefaults){
-                speed = 1.5f;
+                speed = walk.speed * 0.5f;
                 gravity = -9.81f;
                 jump = 0f;
             }
@@ -75,7 +76,7 @@ public class P_Movement : MonoBehaviour {
     [Serializable]
     public class Crawl {
         [Header("Configuration")]
-        public bool enabled;
+        public bool enabled; // TODO
         public bool useDefaults;
 
         [Header("General")]
@@ -83,9 +84,9 @@ public class P_Movement : MonoBehaviour {
         public float gravity;
         public float jump;
 
-        public void Setup(){
+        public void Setup(Crouch crouch){
             if (useDefaults){
-                speed = 1.5f;
+                speed = crouch.speed * 0.5f;
                 gravity = -9.81f;
                 jump = 0f;
             }
@@ -113,9 +114,9 @@ public class P_Movement : MonoBehaviour {
 
         // Behaviors
         walk.Setup();
-        run.Setup();
-        crouch.Setup();
-        crawl.Setup();
+        run.Setup(walk);
+        crouch.Setup(walk);
+        crawl.Setup(crouch);
 
         // Mouse
         P_Controls.Mouse.LockMouse();
@@ -129,10 +130,19 @@ public class P_Movement : MonoBehaviour {
     /// </summary>
     void Update(){
         if (feet.setup){
-            Vector2 move = P_Controls.Movement.GetAxis(walk.speed); 
+            Vector2 move = P_Controls.Movement.GetAxis(
+                P_Controls.Movement.GetRunning() ? 
+                    run.speed 
+                    : 
+                    P_Controls.Movement.GetCrouching() ?
+                        crouch.speed
+                        :
+                        walk.speed
+                    ); 
             velocity = new Vector3(move.y, 0f, move.x);
 
             cont.Move(velocity * Time.deltaTime);
+
             /*
             // Apply
             cont.Move(vel * Time.deltaTime);

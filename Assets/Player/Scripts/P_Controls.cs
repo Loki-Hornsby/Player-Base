@@ -80,12 +80,16 @@ public static class P_Controls {
             return new Vector2(Input.GetAxis("Horizontal") * mult, Input.GetAxis("Vertical") * mult);
         }
 
-        public static bool GetJump(){
+        public static bool GetJumping(){
             return Input.GetKeyDown(KeyCode.Space);
         }
 
         public static bool GetCrouching(){
             return Input.GetKey(KeyCode.LeftControl);
+        }
+
+        public static bool GetRunning(){
+            return Input.GetKey(KeyCode.LeftShift);
         }
     }
 }
