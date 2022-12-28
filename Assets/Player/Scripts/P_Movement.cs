@@ -9,15 +9,9 @@ using UnityEngine;
 
 using System;
 
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-[RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(Animation))]
-public class Movement : MonoBehaviour {
-=======
 //[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CharacterController))]
 public class P_Movement : MonoBehaviour {
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
     [Serializable]
     public class Walk {
         [Header("Configuration")]
@@ -100,11 +94,6 @@ public class P_Movement : MonoBehaviour {
 
     // References
     [Header("References")]
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-    public GameObject Head;
-    public GameObject Body;
-=======
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
     CharacterController cont;
     Animation anim;
     
@@ -114,93 +103,37 @@ public class P_Movement : MonoBehaviour {
     public Run run;
     public Crouch crouch;
     public Crawl crawl;
-
-    [Header("Look configuration")]
-    public Look look;
     
     // Velocity
     Vector3 vel;
-
-    // Rotation
-    Vector3 original;
 
     void Start(){
         // Setup
         cont = GetComponent<CharacterController>();
         anim = GetComponent<Animation>();
         
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-        Controls.Mouse.LockMouse();
-
-        // Variable Init
-        walk.Setup();
-        run.Setup();
-        crouch.Setup();
-        crawl.Setup();
-        look.Setup();
-=======
         P_Controls.Mouse.LockMouse();
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
 
         // Vars
         vel = Vector3.zero;
-        original = Head.transform.eulerAngles;
     }
 
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-    //float GetSpeed(){
-        //if (){
-
-        //}
-    //}
-
-    void ApplyRotation(){
-        // Get Mouse Pos
-        Vector2 mPos = Controls.Mouse.GetMousePosition(false, Time.deltaTime);
-
-        // Left, Right
-        original.y += mPos.x; 
-        
-        // Up, Down
-		original.x += -mPos.y;
-        //rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
-
-        // Apply
-		Head.transform.eulerAngles = original * look.sensitivity;
-        Body.transform.eulerAngles = new Vector3(0f, original.y, 0f) * look.sensitivity;
-    }
-
-    void ApplyPhysics(){
-        Debug.Log(cont.isGrounded);
-
-        // Gravity
-        vel.y += walk.gravity * Time.deltaTime;
-
-=======
     /// <summary>
     /// Applies physics to the player in terms of movement 
     /// </summary>
     void Update(){
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
+        /*
         // Apply
         cont.Move(vel * Time.deltaTime);
 
         // Gravity
         // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
         if (cont.isGrounded){
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-            // Reset gravity
-            vel.y = 0f;
-
-            // Movement
-            Vector2 move = Controls.Movement.GetAxis(walk.speed); 
-=======
             // Apply offset to ensure cont.isGrounded works correctly
             vel.y = -cont.stepOffset / Time.deltaTime;
 
             // Movement
             Vector2 move = P_Controls.Movement.GetAxis(walk.speed); 
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
 
             if (!(move.x == 0f && move.y == 0f)){
                 vel = new Vector3(
@@ -217,22 +150,10 @@ public class P_Movement : MonoBehaviour {
             }
 
             // Jump
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-            if (Controls.Movement.GetJump()){
-=======
             if (P_Controls.Movement.GetJump()){
                 Debug.Log("Jump!");
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
                 vel.y += walk.jump;
             }
-        }
+        }*/
     }
-<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
-
-    void Update(){
-        ApplyRotation();
-        ApplyPhysics();
-    }
-=======
->>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
 }
