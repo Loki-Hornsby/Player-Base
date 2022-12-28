@@ -22,7 +22,11 @@ using UnityEngine;
 ///
 /// </summary>
 
+<<<<<<< HEAD:Assets/Player/Scripts/P_Controls.cs
 public static class P_Controls {
+=======
+public static class PlayerControls {
+>>>>>>> main:Assets/Player/Scripts/PlayerControls.cs
     public static class Mouse {
         static int reset;
 

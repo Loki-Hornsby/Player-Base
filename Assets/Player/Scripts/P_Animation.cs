@@ -7,7 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD:Assets/Player/Scripts/P_Animation.cs
 public class P_Animation : MonoBehaviour {
+=======
+public class PlayerAnimation : MonoBehaviour {
+>>>>>>> main:Assets/Player/Scripts/PlayerAnimation.cs
     public enum States {
         Idle,
         Jumping,
@@ -25,6 +29,7 @@ public class P_Animation : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
+<<<<<<< HEAD:Assets/Player/Scripts/P_Animation.cs
     void SetState(P_Animation.States _state){
         if (state != _state){
             switch (state){
@@ -41,6 +46,24 @@ public class P_Animation : MonoBehaviour {
                     // 
                     break;
                 case P_Animation.States.Crouching:
+=======
+    void SetState(PlayerAnimation.States _state){
+        if (state != _state){
+            switch (state){
+                case PlayerAnimation.States.Idle:
+                    // 
+                    break;
+                case PlayerAnimation.States.Jumping:
+                    // 
+                    break;
+                case PlayerAnimation.States.Moving:
+                    // 
+                    break;
+                case PlayerAnimation.States.Sprinting:
+                    // 
+                    break;
+                case PlayerAnimation.States.Crouching:
+>>>>>>> main:Assets/Player/Scripts/PlayerAnimation.cs
                     // 
                     break;
             }
@@ -50,6 +73,7 @@ public class P_Animation : MonoBehaviour {
     }
 
     public void Jump(){
+<<<<<<< HEAD:Assets/Player/Scripts/P_Animation.cs
         SetState(P_Animation.States.Jumping);
     }
 
@@ -59,5 +83,16 @@ public class P_Animation : MonoBehaviour {
 
     public void Move(){
         SetState(P_Animation.States.Moving);
+=======
+        SetState(PlayerAnimation.States.Jumping);
+    }
+
+    public void Idle(){
+        SetState(PlayerAnimation.States.Idle);
+    }
+
+    public void Move(){
+        SetState(PlayerAnimation.States.Moving);
+>>>>>>> main:Assets/Player/Scripts/PlayerAnimation.cs
     }
 }
