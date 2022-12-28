@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Player/Obj/Crouch.anim.meta
 guid: 4aeda99c2383e8f4fba5b3bef57ad49c
+=======
+guid: b6d2e555a26068d4eb830750f48ddd51
+labels:
+- sb_75be595bf23046a0a5effa834b867ef5
+>>>>>>> Stashed changes:Assets/Player/Obj/ground beef in cling wrap_graph_0/ground beef in cling wrap_graph_0_material.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

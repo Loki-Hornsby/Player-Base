@@ -9,9 +9,15 @@ using UnityEngine;
 
 using System;
 
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animation))]
 public class Movement : MonoBehaviour {
+=======
+//[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CharacterController))]
+public class P_Movement : MonoBehaviour {
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
     [Serializable]
     public class Walk {
         [Header("Configuration")]
@@ -92,19 +98,13 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    [Serializable]
-    public class Look {
-        public float sensitivity = 0.025f;
-
-        public void Setup(){
-
-        }
-    }
-
     // References
     [Header("References")]
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
     public GameObject Head;
     public GameObject Body;
+=======
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
     CharacterController cont;
     Animation anim;
     
@@ -129,6 +129,7 @@ public class Movement : MonoBehaviour {
         cont = GetComponent<CharacterController>();
         anim = GetComponent<Animation>();
         
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
         Controls.Mouse.LockMouse();
 
         // Variable Init
@@ -137,12 +138,16 @@ public class Movement : MonoBehaviour {
         crouch.Setup();
         crawl.Setup();
         look.Setup();
+=======
+        P_Controls.Mouse.LockMouse();
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
 
         // Vars
         vel = Vector3.zero;
         original = Head.transform.eulerAngles;
     }
 
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
     //float GetSpeed(){
         //if (){
 
@@ -171,17 +176,31 @@ public class Movement : MonoBehaviour {
         // Gravity
         vel.y += walk.gravity * Time.deltaTime;
 
+=======
+    /// <summary>
+    /// Applies physics to the player in terms of movement 
+    /// </summary>
+    void Update(){
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
         // Apply
         cont.Move(vel * Time.deltaTime);
 
         // Gravity
         // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
         if (cont.isGrounded){
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
             // Reset gravity
             vel.y = 0f;
 
             // Movement
             Vector2 move = Controls.Movement.GetAxis(walk.speed); 
+=======
+            // Apply offset to ensure cont.isGrounded works correctly
+            vel.y = -cont.stepOffset / Time.deltaTime;
+
+            // Movement
+            Vector2 move = P_Controls.Movement.GetAxis(walk.speed); 
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
 
             if (!(move.x == 0f && move.y == 0f)){
                 vel = new Vector3(
@@ -198,14 +217,22 @@ public class Movement : MonoBehaviour {
             }
 
             // Jump
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
             if (Controls.Movement.GetJump()){
+=======
+            if (P_Controls.Movement.GetJump()){
+                Debug.Log("Jump!");
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
                 vel.y += walk.jump;
             }
         }
     }
+<<<<<<< Updated upstream:Assets/Player/Scripts/Movement.cs
 
     void Update(){
         ApplyRotation();
         ApplyPhysics();
     }
+=======
+>>>>>>> Stashed changes:Assets/Player/Scripts/P_Movement.cs
 }
