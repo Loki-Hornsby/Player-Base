@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 51e3e0e96ac6d3e49bd988cefc3165ec
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 62069fc9cda84de4aa04b4246a7cfb6f, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Player/Obj/limestone_eroded_wall.sbsar
