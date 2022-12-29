@@ -66,20 +66,18 @@ namespace IK {
         }
 
         /// <summary>
-        /// Get the average walk animation for all joints
+        /// Get Walk Animation Average
         /// </summary>
         public Vector3 GetWalkAnimAverage(){
-            Vector3 avg = Vector3.zero;
-            int count = 0;
+            Vector3 result = Vector3.zero;
 
             foreach (var foot in Feet){
                 foreach (var joint in foot.Joints){
-                    avg = avg + joint.walkAnim;
-                    count++;
+                    result = result + joint.walkAnim;
                 }
             }
 
-            return avg; /// count;
+            return result;
         }
     }
 }

@@ -1452,6 +1452,8 @@ GameObject:
   - component: {fileID: 747642594}
   - component: {fileID: 8124473648272375277}
   - component: {fileID: 5665751382296792727}
+  - component: {fileID: 1558465054916929070}
+  - component: {fileID: 4076471680868337105}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -1475,6 +1477,7 @@ Transform:
   - {fileID: 2650500652054740686}
   - {fileID: 4942384547488837973}
   - {fileID: 4942384547442727032}
+  - {fileID: 5498062892118943520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1529,30 +1532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feet: {fileID: 9201914546162323150}
-  walk:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  run:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  crouch:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  crawl:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
 --- !u!114 &747642594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,6 +1643,56 @@ MonoBehaviour:
   - {fileID: 3890043049615338142}
   - {fileID: 9192767744071310100}
   - {fileID: 6304210032097764064}
+--- !u!114 &1558465054916929070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584747302710722064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db119eed7d2910d438e2a6afc34a2c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls: {fileID: 4076471680868337105}
+  movement: {fileID: 7576619035969771761}
+  walk:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  run:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  crouch:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  crawl:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+--- !u!114 &4076471680868337105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584747302710722064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e140756269c7c44ea54eb2d889a165b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3606841728715461992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,6 +2001,89 @@ Transform:
   m_Father: {fileID: 2023256750064524310}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4692929944463630205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5498062892118943520}
+  - component: {fileID: 4715948862981845605}
+  - component: {fileID: 1171281641959667709}
+  m_Layer: 0
+  m_Name: Controls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5498062892118943520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692929944463630205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4248095120830555306}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4715948862981845605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692929944463630205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db119eed7d2910d438e2a6afc34a2c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls: {fileID: 0}
+  movement: {fileID: 0}
+  walk:
+    enabled: 0
+    useDefaults: 0
+    speed: 0
+    gravity: 0
+    jump: 0
+  run:
+    enabled: 0
+    useDefaults: 0
+    speed: 0
+    gravity: 0
+    jump: 0
+  crouch:
+    enabled: 0
+    useDefaults: 0
+    speed: 0
+    gravity: 0
+    jump: 0
+  crawl:
+    enabled: 0
+    useDefaults: 0
+    speed: 0
+    gravity: 0
+    jump: 0
+--- !u!114 &1171281641959667709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692929944463630205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e140756269c7c44ea54eb2d889a165b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4816100389185260608
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,98 +14,10 @@ namespace Player {
     //[RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CharacterController))]
     public class P_Movement : MonoBehaviour {
-        [Serializable]
-        public class Walk {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(){
-                if (useDefaults){
-                    Debug.Log("Setup");
-                    speed = 1.5f;
-                    gravity = -9.81f;
-                    jump = 5f;
-                }
-            }
-        }
-
-        [Serializable]
-        public class Run {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(Walk walk){
-                if (useDefaults){
-                    speed = walk.speed * 2f;
-                    gravity = -9.81f;
-                    jump = 0f;
-                }
-            }
-        }
-
-        [Serializable]
-        public class Crouch {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(Walk walk){
-                if (useDefaults){
-                    speed = walk.speed * 0.5f;
-                    gravity = -9.81f;
-                    jump = 0f;
-                }
-            }
-        }
-
-        [Serializable]
-        public class Crawl {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(Crouch crouch){
-                if (useDefaults){
-                    speed = crouch.speed * 0.5f;
-                    gravity = -9.81f;
-                    jump = 0f;
-                }
-            }
-        }
-
         // References
         [Header("References")]
         public IKFeet feet;
         CharacterController cont;
-        
-        // Properties
-        [Header("Movement Types")]
-        public Walk walk;
-        public Run run;
-        public Crouch crouch;
-        public Crawl crawl;
         
         // Velocity
         [System.NonSerialized] public Vector3 velocity;
@@ -114,15 +26,6 @@ namespace Player {
             // References
             cont = GetComponent<CharacterController>();
 
-            // Behaviors
-            walk.Setup();
-            run.Setup(walk);
-            crouch.Setup(walk);
-            crawl.Setup(crouch);
-
-            // Mouse
-            P_Controls.Mouse.LockMouse();
-
             // Velocity
             velocity = Vector3.zero;
         }
@@ -130,44 +33,35 @@ namespace Player {
         /// <summary>
         /// Applies physics to the player in terms of movement 
         /// </summary>
-        void Update(){
+        public void Send(Vector2 move, bool jump){
             if (feet.setup){
-                Vector2 move = P_Controls.Movement.GetAxis(
-                    P_Controls.Movement.GetRunning() ? 
-                        run.speed 
-                        : 
-                        P_Controls.Movement.GetCrouching() ?
-                            crouch.speed
-                            :
-                            walk.speed
-                        ); 
-                
-                Vector3 realisticWalk = feet.GetWalkAnimAverage();//Mathf.Abs(Unitilities.Maths.CalculateSinOrCos(1f, move.y, true));
-                velocity = new Vector3(realisticWalk.x, 0f, move.x);
+                feet.speed = move.x;
+                feet.amplitude = move.y;
 
+                Vector3 realisticWalk = feet.GetWalkAnimAverage();
+                velocity = realisticWalk; //new Vector3(realisticWalk.x, 0f, move.x);
+
+                // Apply
                 cont.Move(velocity * Time.deltaTime);
 
                 /*
-                // Apply
-                cont.Move(vel * Time.deltaTime);
-
                 // Gravity
                 // it's crucial this is set afterwards since downwards motion needs to be applied to check wether the player is grounded or not
                 if (cont.isGrounded){
                     // Apply offset to ensure cont.isGrounded works correctly
-                    vel.y = -cont.stepOffset / Time.deltaTime;
+                    velocity.y = -cont.stepOffset / Time.deltaTime;
 
                     // Movement
                     Vector2 move = P_Controls.Movement.GetAxis(walk.speed); 
 
                     if (!(move.x == 0f && move.y == 0f)){
-                        vel = new Vector3(
+                        velocity = new Vector3(
                             (Body.transform.forward.x * move.y) + (Body.transform.right.x * move.x),
-                            vel.y,
+                            velocity.y,
                             (Body.transform.forward.z * move.y) + (Body.transform.right.z * move.x)
                         );
                     } else { // Coming to a idle
-                        vel = new Vector3(
+                        velocity = new Vector3(
                             0f,
                             0f,
                             0f
@@ -175,11 +69,12 @@ namespace Player {
                     }
 
                     // Jump
-                    if (P_Controls.Movement.GetJump()){
+                    if (jump){
                         Debug.Log("Jump!");
-                        vel.y += walk.jump;
+                        velocity.y += walk.jump;
                     }
-                }*/
+                }
+                */
             }
         }
     }

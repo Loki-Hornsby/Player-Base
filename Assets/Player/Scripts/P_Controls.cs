@@ -23,75 +23,75 @@ using UnityEngine;
 /// </summary>
 
 namespace Player {
-    public static class P_Controls {
-        public static class Mouse {
-            static int reset;
+    public class P_Controls : MonoBehaviour {
+        // // ==================================== Mouse ==================================== \\ \\
+        int reset;
 
-            static bool ResetCheck(){
-                if (reset > 0){
-                    reset--;
+        bool ResetCheck(){
+            if (reset > 0){
+                reset--;
 
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-            public static void Reset(){
-                reset = 1;
-            }
-
-            public static void LockMouse(){
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-
-            public static void UnlockMouse(){
-                Cursor.lockState = CursorLockMode.None;
-            }
-
-            public static bool GetHeld(int type){
-                if (ResetCheck()) return false;
-
-                return Input.GetMouseButton(type);
-            }
-
-            public static bool GetClicked(int type){
-                if (ResetCheck()) return false;
-
-                return Input.GetMouseButtonDown(type);
-            }
-
-            public static bool GetUp(int type){
-                if (ResetCheck()) return false;
-
-                return Input.GetMouseButtonUp(type);
-            }
-
-            public static Vector2 GetMousePosition(bool GetRealPosition, float time=1f){
-                if (GetRealPosition){
-                    return new Vector2(Input.mousePosition.x * time, Input.mousePosition.y * time);
-                } else {
-                    return new Vector2(Input.GetAxis("Mouse X") * time, Input.GetAxis("Mouse Y") * time);
-                }
+                return true;
+            } else {
+                return false;
             }
         }
 
-        public static class Movement {
-            public static Vector2 GetAxis(float mult = 1f){
-                return new Vector2(Input.GetAxis("Horizontal") * mult, Input.GetAxis("Vertical") * mult);
-            }
+        public void Reset(){
+            reset = 1;
+        }
 
-            public static bool GetJumping(){
-                return Input.GetKeyDown(KeyCode.Space);
-            }
+        public void LockMouse(){
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
-            public static bool GetCrouching(){
-                return Input.GetKey(KeyCode.LeftControl);
-            }
+        public void UnlockMouse(){
+            Cursor.lockState = CursorLockMode.None;
+        }
 
-            public static bool GetRunning(){
-                return Input.GetKey(KeyCode.LeftShift);
+        public bool GetHeld(int type){
+            if (ResetCheck()) return false;
+
+            return Input.GetMouseButton(type);
+        }
+
+        public bool GetClicked(int type){
+            if (ResetCheck()) return false;
+
+            return Input.GetMouseButtonDown(type);
+        }
+
+        public bool GetUp(int type){
+            if (ResetCheck()) return false;
+
+            return Input.GetMouseButtonUp(type);
+        }
+
+        public Vector2 GetMousePosition(bool GetRealPosition, float time=1f){
+            if (GetRealPosition){
+                return new Vector2(Input.mousePosition.x * time, Input.mousePosition.y * time);
+            } else {
+                return new Vector2(Input.GetAxis("Mouse X") * time, Input.GetAxis("Mouse Y") * time);
             }
         }
+        // \\ ================================================================================== // \\
+
+        // // ==================================== Movement ==================================== \\ \\
+        public Vector2 GetAxis(float mult = 1f){
+            return new Vector2(Input.GetAxis("Horizontal") * mult, Input.GetAxis("Vertical") * mult);
+        }
+
+        public bool GetJumping(){
+            return Input.GetKeyDown(KeyCode.Space);
+        }
+
+        public bool GetCrouching(){
+            return Input.GetKey(KeyCode.LeftControl);
+        }
+
+        public bool GetRunning(){
+            return Input.GetKey(KeyCode.LeftShift);
+        }
+        // \\ ================================================================================== // \\
     }
 }
