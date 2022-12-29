@@ -14,7 +14,7 @@ namespace Player {
         /// <summary>
         /// Applies rotation to both the body of the player and the head
         /// </summary>
-        void Update(){
+        void Send(){
             /*
             // Get Mouse Pos
             Vector2 mPos = PlayerControls.Mouse.GetMousePosition(false, Time.deltaTime);
