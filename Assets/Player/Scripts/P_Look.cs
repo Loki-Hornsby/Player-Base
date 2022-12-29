@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Player {
     public class P_Look : MonoBehaviour {
-        public Camera camera;
+        public GameObject Head;
 
         /// <summary>
         /// Applies rotation to both the body of the player and the head

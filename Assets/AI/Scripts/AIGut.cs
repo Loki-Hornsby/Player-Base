@@ -72,7 +72,7 @@ namespace AI {
 
         [Serializable]
         public class Movement {
-            public AIMovement reference;
+            public AIControls reference;
 
             public float speed;
             public float sensitivity;

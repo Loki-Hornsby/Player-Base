@@ -21,12 +21,8 @@ namespace IK {
         int index;
 
         [Header("Configuration")]
-        [Range(-1f, 1f)] public float speed;
-        [Range(-4f, 4f)] public float speedOffset;
-        [Range(-1f, 1f)] public float amplitude;
-        [Range(-4f, 4f)] public float amplitudeOffset;
-        [Range(-4f, 4f)] public float cosOffset;
-        [Range(-4f, 4f)] public float sinOffset;
+        public float speed;
+        public float amplitude;
 
         [Header("Raycast")]
         public LayerMask RaycastLayers;

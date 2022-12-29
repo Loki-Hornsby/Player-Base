@@ -117,16 +117,12 @@ namespace IK {
         public Vector3 CalculateWalkAnimResult(IKFeet feet, int index){
             return ( // Calculates walk motion (produces a kind of circle shape)
                 new Vector3( 
-                    feet.cosOffset + Unitilities.Maths.CalculateSinOrCos(
-                        // Cos : true
-                        // *-1f so the foot goes in the correct direction
-                        feet.speed * feet.speedOffset, feet.amplitude * feet.amplitudeOffset, true) * -1f, 
+                    0f,
+                    Unitilities.Maths.CalculateSinOrCos(
+                        feet.speed, feet.amplitude, false),
+                    Unitilities.Maths.CalculateSinOrCos(
+                        feet.speed, feet.amplitude, true) * -1f
 
-                    feet.sinOffset + Unitilities.Maths.CalculateSinOrCos(
-                         // Sin : false
-                        feet.speed * feet.speedOffset, feet.amplitude * feet.amplitudeOffset, false),
-
-                    0f
                 ) * ((index % 2f == 0f) ? 1f : -1f) // Allows the player to moonwalk haha!
             );
         }

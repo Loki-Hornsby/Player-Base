@@ -8,8 +8,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using AI;
+
 /// <summary>
-/// Handles the controls
+/// Handles a players controls
 ///
 ///    GetKeyDown
 ///    only runs once on the first frame that the key was pressed.
@@ -24,6 +26,111 @@ using UnityEngine;
 
 namespace Player {
     public class P_Controls : MonoBehaviour {
+        [Serializable]
+        public class Walk {
+            [Header("Configuration")]
+            public bool enabled; // TODO
+            public bool useDefaults;
+
+            [Header("General")]
+            public float speed;
+            public float gravity;
+            public float jump;
+
+            public void Setup(){
+                if (useDefaults){
+                    Debug.Log("Setup");
+                    speed = 1.5f;
+                    gravity = -9.81f;
+                    jump = 5f;
+                }
+            }
+        }
+
+        [Serializable]
+        public class Run {
+            [Header("Configuration")]
+            public bool enabled; // TODO
+            public bool useDefaults;
+
+            [Header("General")]
+            public float speed;
+            public float gravity;
+            public float jump;
+
+            public void Setup(Walk walk){
+                if (useDefaults){
+                    speed = walk.speed * 2f;
+                    gravity = -9.81f;
+                    jump = 0f;
+                }
+            }
+        }
+
+        [Serializable]
+        public class Crouch {
+            [Header("Configuration")]
+            public bool enabled; // TODO
+            public bool useDefaults;
+
+            [Header("General")]
+            public float speed;
+            public float gravity;
+            public float jump;
+
+            public void Setup(Walk walk){
+                if (useDefaults){
+                    speed = walk.speed * 0.5f;
+                    gravity = -9.81f;
+                    jump = 0f;
+                }
+            }
+        }
+
+        [Serializable]
+        public class Crawl {
+            [Header("Configuration")]
+            public bool enabled; // TODO
+            public bool useDefaults;
+
+            [Header("General")]
+            public float speed;
+            public float gravity;
+            public float jump;
+
+            public void Setup(Crouch crouch){
+                if (useDefaults){
+                    speed = crouch.speed * 0.5f;
+                    gravity = -9.81f;
+                    jump = 0f;
+                }
+            }
+        }
+
+        [Header("Configuration")]
+        public Walk walk;
+        public Run run;
+        public Crouch crouch;
+        public Crawl crawl;
+
+        [Header("AI (Optional)")]
+        public AIControls AI;
+        bool isAI;
+        
+        void Start(){
+            // Setup
+            walk.Setup();
+            run.Setup(walk);
+            crouch.Setup(walk);
+            crawl.Setup(crouch);
+
+            // Mouse
+            LockMouse();
+
+            // AI
+            isAI = (AI != null);
+        }
+
         // // ==================================== Mouse ==================================== \\ \\
         int reset;
 
@@ -74,23 +181,50 @@ namespace Player {
                 return new Vector2(Input.GetAxis("Mouse X") * time, Input.GetAxis("Mouse Y") * time);
             }
         }
-        // \\ ================================================================================== // \\
 
         // // ==================================== Movement ==================================== \\ \\
         public Vector2 GetAxis(float mult = 1f){
-            return new Vector2(Input.GetAxis("Horizontal") * mult, Input.GetAxis("Vertical") * mult);
+            if (isAI){
+                return AI.axis * mult;
+            } else {
+                return new Vector2(Input.GetAxis("Horizontal") * mult, Input.GetAxis("Vertical") * mult);
+            }
         }
 
         public bool GetJumping(){
-            return Input.GetKeyDown(KeyCode.Space);
+            if (isAI){
+                return AI.isJumping; 
+            } else {
+                return Input.GetKeyDown(KeyCode.Space);
+            }
         }
 
         public bool GetCrouching(){
-            return Input.GetKey(KeyCode.LeftControl);
+            if (isAI){
+                return AI.isCrouching;
+            } else {
+                return Input.GetKey(KeyCode.LeftControl);
+            }
         }
 
         public bool GetRunning(){
-            return Input.GetKey(KeyCode.LeftShift);
+            if (isAI){
+                return AI.isRunning;
+            } else {
+                return Input.GetKey(KeyCode.LeftShift);
+            }
+        }
+
+        public Vector2 GetVelocity(){
+            return GetAxis(
+                GetRunning() ? 
+                    run.speed 
+                    : 
+                    GetCrouching() ?
+                        crouch.speed
+                        :
+                        walk.speed
+            ); 
         }
         // \\ ================================================================================== // \\
     }

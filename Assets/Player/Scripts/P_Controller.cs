@@ -8,127 +8,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player {
+/// <summary>
+/// Passes the controls to the correct scripts
+/// </summary>
+namespace Player {  
+    [RequireComponent(typeof(P_Controls))]
     public class P_Controller : MonoBehaviour {
-        [Serializable]
-        public class Walk {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(){
-                if (useDefaults){
-                    Debug.Log("Setup");
-                    speed = 1.5f;
-                    gravity = -9.81f;
-                    jump = 5f;
-                }
-            }
-        }
-
-        [Serializable]
-        public class Run {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(Walk walk){
-                if (useDefaults){
-                    speed = walk.speed * 2f;
-                    gravity = -9.81f;
-                    jump = 0f;
-                }
-            }
-        }
-
-        [Serializable]
-        public class Crouch {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(Walk walk){
-                if (useDefaults){
-                    speed = walk.speed * 0.5f;
-                    gravity = -9.81f;
-                    jump = 0f;
-                }
-            }
-        }
-
-        [Serializable]
-        public class Crawl {
-            [Header("Configuration")]
-            public bool enabled; // TODO
-            public bool useDefaults;
-
-            [Header("General")]
-            public float speed;
-            public float gravity;
-            public float jump;
-
-            public void Setup(Crouch crouch){
-                if (useDefaults){
-                    speed = crouch.speed * 0.5f;
-                    gravity = -9.81f;
-                    jump = 0f;
-                }
-            }
-        }
-
-        [Header("References")]
-        public P_Controls controls;
         public P_Movement movement;
+        //public P_Look look;
+        //public P_Weapons weapons;
+        //public P_Melee melee;
 
-        [Header("Configuration")]
-        public Walk walk;
-        public Run run;
-        public Crouch crouch;
-        public Crawl crawl;
-
+        P_Controls controls;
+        
         void Start(){
-            // Setup
-            walk.Setup();
-            run.Setup(walk);
-            crouch.Setup(walk);
-            crawl.Setup(crouch);
-
-            // Mouse
-            controls.LockMouse();
+            controls = GetComponent<P_Controls>();
         }
 
         void Update(){
-            // Movement
-            Vector2 move = controls.GetAxis(
-                controls.GetRunning() ? 
-                    run.speed 
-                    : 
-                    controls.GetCrouching() ?
-                        crouch.speed
-                        :
-                        walk.speed
-            ); 
-
-            // Jumping
-            bool jumping = controls.GetJumping();
-
             // Send movement to movement script
-            movement.Send(move, jumping);
+            movement.Send(
+                Time.deltaTime,
+                controls.GetVelocity(), 
+                controls.GetJumping(), 
+                controls.GetCrouching(), 
+                controls.GetRunning()
+            );
         }
     }
 }

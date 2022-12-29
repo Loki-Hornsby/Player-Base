@@ -15,7 +15,6 @@ namespace IK {
     public class IKFoot {
         bool setup;
 
-        // References
         [Header("Joints")]
         public List<IKJoint> Joints;
 

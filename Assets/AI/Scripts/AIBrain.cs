@@ -22,7 +22,7 @@ namespace AI {
         }
 
         [Header("References")]
-        public AIMovement movement;
+        public AIControls controls;
         public AIHead head;
 
         [Header("Job")]
@@ -52,7 +52,7 @@ namespace AI {
         public void Proc(AIBrain.Jobs last, AIBrain.Jobs current){
             switch (current){
                 case AIBrain.Jobs.IveJustBeenSpawnedIntoAWorldHowInTheHellDidIGetHere:
-                    movement.Job = AIMovement.Jobs.Wander;
+                    controls.Job = AIControls.Jobs.Wander;
                     break;
                 default:
                     break;

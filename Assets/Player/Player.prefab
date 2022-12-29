@@ -1452,10 +1452,8 @@ GameObject:
   - component: {fileID: 747642594}
   - component: {fileID: 8124473648272375277}
   - component: {fileID: 5665751382296792727}
-  - component: {fileID: 1558465054916929070}
-  - component: {fileID: 4076471680868337105}
   m_Layer: 0
-  m_Name: Person
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74e730ec4b4c9946aa5e17bfc8983a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 4942384547442727034}
+  Head: {fileID: 0}
 --- !u!143 &8124473648272375277
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1643,56 +1641,6 @@ MonoBehaviour:
   - {fileID: 3890043049615338142}
   - {fileID: 9192767744071310100}
   - {fileID: 6304210032097764064}
---- !u!114 &1558465054916929070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584747302710722064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db119eed7d2910d438e2a6afc34a2c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controls: {fileID: 4076471680868337105}
-  movement: {fileID: 7576619035969771761}
-  walk:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  run:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  crouch:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  crawl:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
---- !u!114 &4076471680868337105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584747302710722064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e140756269c7c44ea54eb2d889a165b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3606841728715461992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,32 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db119eed7d2910d438e2a6afc34a2c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controls: {fileID: 0}
-  movement: {fileID: 0}
-  walk:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
-  run:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
-  crouch:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
-  crawl:
-    enabled: 0
-    useDefaults: 0
-    speed: 0
-    gravity: 0
-    jump: 0
+  movement: {fileID: 7576619035969771761}
 --- !u!114 &1171281641959667709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,6 +2007,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e140756269c7c44ea54eb2d889a165b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walk:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  run:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  crouch:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  crawl:
+    enabled: 1
+    useDefaults: 1
+    speed: 0
+    gravity: 0
+    jump: 0
+  AI: {fileID: 0}
 --- !u!1 &4816100389185260608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,12 +3567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b417e5cc6fc7c9c41935ec859783450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  speedOffset: 0.81
-  amplitude: 1
-  amplitudeOffset: 1.62
-  cosOffset: 0
-  sinOffset: 0
+  speed: 0
+  amplitude: 0
   RaycastLayers:
     serializedVersion: 2
     m_Bits: 8

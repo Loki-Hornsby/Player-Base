@@ -10,11 +10,12 @@ using UnityEngine;
 
 using IK;
 
+/// <summary>
+/// Handles movement of the player
+/// </summary>
 namespace Player {
-    //[RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CharacterController))]
     public class P_Movement : MonoBehaviour {
-        // References
         [Header("References")]
         public IKFeet feet;
         CharacterController cont;
@@ -33,16 +34,17 @@ namespace Player {
         /// <summary>
         /// Applies physics to the player in terms of movement 
         /// </summary>
-        public void Send(Vector2 move, bool jump){
+        public void Send(float t, Vector2 move, bool jump, bool crouch, bool run){
             if (feet.setup){
-                feet.speed = move.x;
+                // Movement
+                velocity = new Vector3(move.x, 0f, move.y);
+
+                // Feet
+                feet.speed = move.y;
                 feet.amplitude = move.y;
 
-                Vector3 realisticWalk = feet.GetWalkAnimAverage();
-                velocity = realisticWalk; //new Vector3(realisticWalk.x, 0f, move.x);
-
                 // Apply
-                cont.Move(velocity * Time.deltaTime);
+                cont.Move(velocity * t);
 
                 /*
                 // Gravity

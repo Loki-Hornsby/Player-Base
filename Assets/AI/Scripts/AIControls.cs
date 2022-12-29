@@ -12,7 +12,7 @@ using UnityEngine;
 /// </summary>
 
 namespace AI {
-    public class AIMovement : MonoBehaviour{
+    public class AIControls : MonoBehaviour{
         public enum Jobs {
             Wander,
             Visit,
@@ -24,6 +24,16 @@ namespace AI {
         public AIGut gut;
 
         [Header("Job")]
-        public AIMovement.Jobs Job;
+        public AIControls.Jobs Job;
+
+        // Controls
+        [System.NonSerialized] public Vector2 axis;
+        [System.NonSerialized] public bool isJumping;
+        [System.NonSerialized] public bool isCrouching;
+        [System.NonSerialized] public bool isRunning;
+
+        void Start(){
+            axis = new Vector2(0f, 1f);
+        }
     }
 }
