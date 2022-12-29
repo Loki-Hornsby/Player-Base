@@ -1,5 +1,5 @@
 # Player-Base
-A base for a 3D player, enemy, NPC, etc.
+A base for a 3D player.
 
 # External Resources
 - [IK System](https://www.youtube.com/watch?v=acMK93A-FSY&vl=en)
@@ -7,6 +7,6 @@ A base for a 3D player, enemy, NPC, etc.
 - [Adobe Substance Plugin for Unity](https://substance3d.adobe.com/plugins/substance-in-unity/)
 
 # Features
-- Movement ~ WIP
+- Basic FPS Movement
 - IK (Procedural Animation)
 - Adobe Substance material support
