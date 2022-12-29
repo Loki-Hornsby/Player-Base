@@ -1,5 +1,5 @@
 # Player-Base
-A base for a 3D player, enemy, NPC, etc.
+A base for a 3D player.
 
 # External Resources
 - [IK System](https://www.youtube.com/watch?v=acMK93A-FSY&vl=en)
