@@ -10,3 +10,4 @@ A base for a 3D player.
 - Basic FPS Movement
 - IK (Procedural Animation)
 - Adobe Substance material support
+- AI
