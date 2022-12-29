@@ -15,7 +15,7 @@ namespace Player {
     [RequireComponent(typeof(P_Controls))]
     public class P_Controller : MonoBehaviour {
         public P_Movement movement;
-        //public P_Look look;
+        public P_Look look;
         //public P_Weapons weapons;
         //public P_Melee melee;
 
@@ -33,6 +33,12 @@ namespace Player {
                 controls.GetJumping(), 
                 controls.GetCrouching(), 
                 controls.GetRunning()
+            );
+
+            // Send look to look script
+            look.Send( 
+                Time.deltaTime,
+                Vector3.zero//controls.Mouse.GetLook()
             );
         }
     }

@@ -1467,14 +1467,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3584747302710722064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.441, z: -0.748}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3496310058279479827}
   - {fileID: 2650500652054740686}
   - {fileID: 4942384547488837973}
-  - {fileID: 4942384547442727032}
   - {fileID: 5498062892118943520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1542,7 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74e730ec4b4c9946aa5e17bfc8983a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: {fileID: 0}
+  Head: {fileID: 8833601887644744771}
 --- !u!143 &8124473648272375277
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1980,7 +1979,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4248095120830555306}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4715948862981845605
 MonoBehaviour:
@@ -1995,6 +1994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 7576619035969771761}
+  look: {fileID: 747642594}
 --- !u!114 &1171281641959667709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,30 +2007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e140756269c7c44ea54eb2d889a165b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  run:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  crouch:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
-  crawl:
-    enabled: 1
-    useDefaults: 1
-    speed: 0
-    gravity: 0
-    jump: 0
   AI: {fileID: 0}
 --- !u!1 &4816100389185260608
 GameObject:
@@ -2153,13 +2129,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4942384547442727031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalRotation: {x: -0.5755606, y: 0.41131115, z: -0.5750764, w: -0.41090184}
+  m_LocalPosition: {x: -0.11062637, y: 0.023647826, z: -0.000015232883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4248095120830555306}
-  m_RootOrder: 3
+  m_Father: {fileID: 3568207216782482705}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4942384547442727034
 Camera:
@@ -3335,7 +3311,8 @@ Transform:
   m_LocalPosition: {x: -0.07128731, y: 0.00000009689331, z: 0.0000000026967377}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000002}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4942384547442727032}
   m_Father: {fileID: 4527091264621041434}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

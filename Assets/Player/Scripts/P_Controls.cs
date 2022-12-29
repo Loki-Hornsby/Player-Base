@@ -26,8 +26,9 @@ using AI;
 
 namespace Player {
     public class P_Controls : MonoBehaviour {
+        /*
         [Serializable]
-        public class Walk {
+        public struct Walk {
             [Header("Configuration")]
             public bool enabled; // TODO
             public bool useDefaults;
@@ -48,7 +49,7 @@ namespace Player {
         }
 
         [Serializable]
-        public class Run {
+        public struct Run {
             [Header("Configuration")]
             public bool enabled; // TODO
             public bool useDefaults;
@@ -68,7 +69,7 @@ namespace Player {
         }
 
         [Serializable]
-        public class Crouch {
+        public struct Crouch {
             [Header("Configuration")]
             public bool enabled; // TODO
             public bool useDefaults;
@@ -88,7 +89,7 @@ namespace Player {
         }
 
         [Serializable]
-        public class Crawl {
+        public struct Crawl {
             [Header("Configuration")]
             public bool enabled; // TODO
             public bool useDefaults;
@@ -111,7 +112,7 @@ namespace Player {
         public Walk walk;
         public Run run;
         public Crouch crouch;
-        public Crawl crawl;
+        public Crawl crawl;*/
 
         [Header("AI (Optional)")]
         public AIControls AI;
@@ -119,16 +120,38 @@ namespace Player {
         
         void Start(){
             // Setup
-            walk.Setup();
-            run.Setup(walk);
-            crouch.Setup(walk);
-            crawl.Setup(crouch);
+            //walk.Setup();
+            //run.Setup(walk);
+            //crouch.Setup(walk);
+            //crawl.Setup(crouch);
 
             // Mouse
             LockMouse();
 
             // AI
             isAI = (AI != null);
+        }
+
+        void Update(){
+            /*
+            // Get Mouse Pos
+            Vector2 mPos = PlayerControls.Mouse.GetMousePosition(false, Time.deltaTime);
+
+            // Left, Right
+            rotation.y += mPos.x; 
+            
+            // Up, Down
+            rotation.x += -mPos.y;
+            rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
+
+            // Apply
+            Head.transform.eulerAngles = original * look.sensitivity;
+            transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x, 
+                rotation.y, 
+                transform.eulerAngles.z
+            ) * look.sensitivity;
+            */
         }
 
         // // ==================================== Mouse ==================================== \\ \\
@@ -181,6 +204,7 @@ namespace Player {
                 return new Vector2(Input.GetAxis("Mouse X") * time, Input.GetAxis("Mouse Y") * time);
             }
         }
+        
 
         // // ==================================== Movement ==================================== \\ \\
         public Vector2 GetAxis(float mult = 1f){
@@ -218,14 +242,13 @@ namespace Player {
         public Vector2 GetVelocity(){
             return GetAxis(
                 GetRunning() ? 
-                    run.speed 
+                    1f 
                     : 
                     GetCrouching() ?
-                        crouch.speed
+                        0.25f
                         :
-                        walk.speed
+                        0.5f
             ); 
         }
-        // \\ ================================================================================== // \\
     }
 }

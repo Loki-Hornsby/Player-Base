@@ -17,7 +17,7 @@ using System.Linq;
 namespace AI {
     public class AIGut : MonoBehaviour {
         [Serializable]
-        public class General {
+        public struct General {
             public float age;
 
             public void Determine(){
@@ -26,7 +26,7 @@ namespace AI {
         }
 
         [Serializable]
-        public class Reflexes {
+        public struct Reflexes {
             // Look --> React --> Action
             public float LookTime;
             public float ReactTime;
@@ -38,7 +38,7 @@ namespace AI {
         }
 
         [Serializable]
-        public class Relations {
+        public struct Relations {
             public AIRelationships reference;
 
             public AIRelationships.PossibleRelations DefaultRelation;
@@ -49,7 +49,7 @@ namespace AI {
         }
 
         [Serializable]
-        public class Memories {
+        public struct Memories {
             public AIMemories reference;
 
             //public AIMemories.PossibleMemories DefaultMemory; ~ Long or short term
@@ -60,7 +60,7 @@ namespace AI {
         }
 
         [Serializable]
-        public class View {
+        public struct View {
             public AIView reference;
             
             public float CloseBorder;
@@ -71,7 +71,7 @@ namespace AI {
         }
 
         [Serializable]
-        public class Movement {
+        public struct Movement {
             public AIControls reference;
 
             public float speed;
