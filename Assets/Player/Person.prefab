@@ -3507,46 +3507,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b417e5cc6fc7c9c41935ec859783450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 7576619035969771761}
+  speed: 1
+  speedOffset: 0.81
+  amplitude: 1
+  amplitudeOffset: 1.62
+  cosOffset: 0
+  sinOffset: 0
+  RaycastLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  RaycastDistance: 5
+  RaycastTipForward: 0.2
+  RaycastOriginForward: 0.1
   Feet:
-  - RaycastLayers:
-      serializedVersion: 2
-      m_Bits: 9
-    RaycastDistance: 5
-    RaycastTipForward: 0.2
-    RaycastOriginForward: 0.1
-    joints:
+  - Joints:
     - reference: {fileID: 8166874818558293087}
       target: {fileID: 2783939742521687171}
       hint: {fileID: 2783939743150387147}
-      forwardOffset: 0
-      speed: 1
-      amplitude: 1
     - reference: {fileID: 8947635744872467497}
       target: {fileID: 3950792365724257267}
       hint: {fileID: 9173287098819034638}
-      forwardOffset: 0.3
-      speed: 1
-      amplitude: 0
-  - RaycastLayers:
-      serializedVersion: 2
-      m_Bits: 9
-    RaycastDistance: 5
-    RaycastTipForward: 0.2
-    RaycastOriginForward: 0.1
-    joints:
+  - Joints:
     - reference: {fileID: 2194166796901211451}
       target: {fileID: 3545295978897263340}
       hint: {fileID: 2347698299523477319}
-      forwardOffset: 0
-      speed: 1
-      amplitude: 1
     - reference: {fileID: 2531243308101828281}
       target: {fileID: 7889373818690999795}
       hint: {fileID: 9206081009300707368}
-      forwardOffset: 0.3
-      speed: 1
-      amplitude: 0
 --- !u!114 &7640831703246275613
 MonoBehaviour:
   m_ObjectHideFlags: 0
