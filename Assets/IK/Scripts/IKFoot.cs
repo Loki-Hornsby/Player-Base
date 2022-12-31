@@ -10,54 +10,119 @@ using UnityEngine;
 
 using UnityEngine.Animations.Rigging;
 
+/// <summary>
+/// P_Controller.cs <-- P_Movement.cs <-- IKFeet.cs <-- * IKFoot.cs * --> IKJoints.cs
+/// </summary>
+
 namespace IK {
     [Serializable]
     public class IKFoot {
-        bool setup;
+        [Header("References")]
+        public IKJoints joints;
 
-        [Header("Joints")]
-        public List<IKJoint> Joints;
+        // Animation
+        [System.NonSerialized] public Vector3 walkAnim;
 
         /// <summary>
-        /// Check if foot is setup
+        /// Calculate averages between 2 raycasts
         /// </summary>
-        public bool isSetup(){
-            return setup;
+        public Vector3 CalculateRaycastAverage(
+            int i, LayerMask RaycastLayers, float RaycastDistance, float RaycastTipForward, float RaycastOriginForward){
+
+            // Transform References
+            Transform root = joints.GetRootTransform(i);
+            Transform mid = joints.GetMidTransform(i);
+            Transform tip = joints.GetTipTransform(i);
+            Transform reference = joints.GetReferenceTransform(i);
+
+            // Raycast Origin
+            Vector3 OriginForward = reference.forward * RaycastOriginForward;
+            RaycastHit hitOrigin;
+
+            Physics.Raycast(
+                root.position + OriginForward,
+                -Vector3.up, 
+                out hitOrigin, 
+                RaycastDistance, 
+                RaycastLayers
+            );
+
+            // Raycast Tip
+            Vector3 TipForward = reference.forward * RaycastTipForward;
+            RaycastHit hitTip;
+
+            Physics.Raycast(
+                root.position + TipForward,
+                -Vector3.up, 
+                out hitTip, 
+                RaycastDistance, 
+                RaycastLayers
+            );
+
+            // Hit points
+            Vector3 hpA = hitOrigin.point - OriginForward;
+            Vector3 hpB = hitTip.point - TipForward;
+
+            // AVG between hit points
+            return (hpA + hpB) / 2f;
         }
 
         /// <summary>
-        /// Setup Joints and Feet
+        /// Calculate target position
         /// </summary>
-        public IEnumerator Setup(){
-            Debug.Log("Setting up IK handles...");
+        public Vector3 CalculateTargetPosition(Vector3 walk, Vector3 avg){
+            // Foot Walk Cycle Animation (F.W.C.A ~ O.W.C.A anyone?)
+            Vector3 min = avg;
+            Vector3 max = min + walk;
+            
+            // Reset height
+            if (max.y < min.y) max.y = min.y;
 
-            setup = false;
-
-            foreach (var joint in Joints){
-                // Setup Joint
-                joint.Setup();
-
-                yield return new WaitForSeconds(2.5f); // Wait for IK to setup
-
-                // Complete Setup
-                joint.Complete();
-            }
-
-            setup = true;
-
-            Debug.Log("Finished setting up IK handles!");
+            return max;
         }
 
         /// <summary>
-        /// Update Joints and Feet
+        /// Get result from walk cycle animation formula
+        /// </summary>
+        public Vector3 CalculateWalkAnimResult(IKFeet feet, int index){
+            return ( // Calculates walk motion (produces a kind of circle shape)
+                new Vector3( 
+                    0f,
+                    Unitilities.Maths.CalculateSinOrCos(
+                        feet.speed, feet.amplitude, false),
+                    Unitilities.Maths.CalculateSinOrCos(
+                        feet.speed, feet.amplitude, true) * -1f
+
+                ) * ((index % 2f == 0f) ? 1f : -1f) // Allows the player to moonwalk haha!
+            );
+        }
+
+        /// <summary>
+        /// Update Joint
         /// </summary>
         public void Update(IKFeet feet, int index, float t){
-            if (setup){
-                foreach (var joint in Joints){
-                    if (joint.isSetup()){
-                        joint.Update(feet, index, t);
-                    }
-                }
+            for (int i = 0; i < joints.GetJoints(); i++){
+                // Calculate Animations
+                walkAnim = CalculateWalkAnimResult(feet, index);
+            
+                // Target
+                Vector3 target = CalculateTargetPosition(
+                    walkAnim,
+
+                    CalculateRaycastAverage(
+                        i,
+                        feet.RaycastLayers,
+                        feet.RaycastDistance,
+                        feet.RaycastTipForward,
+                        feet.RaycastOriginForward
+                    )
+                );
+
+                // Hint
+                Vector3 hint = joints.GetHintPosition(i);
+
+                // Modify
+                joints.Modify(i, target, hint);
             }
         }
     }

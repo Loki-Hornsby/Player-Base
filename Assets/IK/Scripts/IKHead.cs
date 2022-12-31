@@ -1,18 +1,32 @@
+/// <summary>
+/// Copyright 2022, Loki Alexander Button Hornsby (Loki Hornsby), All rights reserved.
+/// Licensed under the BSD 3-Clause "New" or "Revised" License
+/// </summary>
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IKHead : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+using UnityEngine.Animations.Rigging;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+/// <summary>
+/// P_Controller.cs <-- P_Look.cs <-- * IKHead.cs * --> IKNeck.cs --> IKJoints.cs
+/// </summary>
+
+namespace IK {
+    [RequireComponent(typeof(Rig))]
+    public class IKHead : MonoBehaviour {
+        [Header("List o' Necks")]
+        public List<IKNeck> Necks;
+
+        /// <summary>
+        /// Send data to this script
+        /// </summary>
+        public void Send(IKHead head, Vector3 rotation){
+            for (int i = 0; i < Necks.Count; i++){
+                Necks[i].Update(head, rotation);
+            }
+        }
     }
 }

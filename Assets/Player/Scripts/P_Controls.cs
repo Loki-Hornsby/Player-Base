@@ -24,6 +24,10 @@ using AI;
 ///
 /// </summary>
 
+/// <summary>
+/// * P_Controls.cs * --> P_Controller.cs --> P_*.cs --> IK*.cs --> IK*.cs --> IKJoints.cs
+/// </summary> 
+
 namespace Player {
     public class P_Controls : MonoBehaviour {
         /*
@@ -204,7 +208,6 @@ namespace Player {
                 return new Vector2(Input.GetAxis("Mouse X") * time, Input.GetAxis("Mouse Y") * time);
             }
         }
-        
 
         // // ==================================== Movement ==================================== \\ \\
         public Vector2 GetAxis(float mult = 1f){

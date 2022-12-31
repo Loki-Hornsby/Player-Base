@@ -11,15 +11,12 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
 /// <summary>
-/// Handles Procedural Feet Animation using the Animations.Rigging package
+/// P_Controller.cs <-- P_Movement.cs <-- * IKFeet.cs * --> IKFoot.cs --> IKJoints.cs
 /// </summary>
 
 namespace IK {
     [RequireComponent(typeof(Rig))]
     public class IKFeet : MonoBehaviour {
-        [System.NonSerialized] public bool setup;
-        int index;
-
         [Header("Configuration")]
         public float speed;
         public float amplitude;
@@ -34,31 +31,20 @@ namespace IK {
         public List<IKFoot> Feet;
 
         /// <summary>
-        /// Setup Feet
+        /// Update Feet
         /// </summary>
-        void Awake(){
-            foreach (var foot in Feet){
-                StartCoroutine(foot.Setup());
+        void Update(){
+            for (int i = 0; i < Feet.Count; i++){
+                Feet[i].Update(this, i, Time.deltaTime);
             }
         }
 
         /// <summary>
-        /// Update Feet
+        /// Send data to this script
         /// </summary>
-        void Update(){
-            index = 0;
-
-            // Feet
-            foreach (var foot in Feet){
-                // Update index counter
-                if (foot.isSetup()) index++;
-
-                // Setup condition
-                if (!setup && index == Feet.Count) setup = true;
-                
-                // Update feet
-                foot.Update(this, index, Time.deltaTime);
-            }
+        public void Send(float _speed, float _amplitude){
+            speed = _speed;
+            amplitude = _amplitude;
         }
 
         /// <summary>
@@ -68,9 +54,7 @@ namespace IK {
             Vector3 result = Vector3.zero;
 
             foreach (var foot in Feet){
-                foreach (var joint in foot.Joints){
-                    result = result + joint.walkAnim;
-                }
+                result = result + foot.walkAnim;
             }
 
             return result;

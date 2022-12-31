@@ -9,24 +9,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Passes the controls to the correct scripts
+/// P_Controls.cs <-- * P_Controller.cs * --> P_*.cs --> IK*.cs --> IK*.cs --> IKJoints.cs
 /// </summary>
+
 namespace Player {  
     [RequireComponent(typeof(P_Controls))]
     public class P_Controller : MonoBehaviour {
+        [Header("References")]
         public P_Movement movement;
         public P_Look look;
-        //public P_Weapons weapons;
-        //public P_Melee melee;
-
+   
         P_Controls controls;
+
+        // Look
+        Vector2 rotation;
         
         void Start(){
             controls = GetComponent<P_Controls>();
         }
 
         void Update(){
-            // Send movement to movement script
+            // Update movement to movement script
             movement.Send(
                 Time.deltaTime,
                 controls.GetVelocity(), 
@@ -35,11 +38,25 @@ namespace Player {
                 controls.GetRunning()
             );
 
-            // Send look to look script
+            // Update look to look script
+            Vector2 mouse = controls.GetMousePosition(false, Time.deltaTime);
+            rotation.y += mouse.x * Time.deltaTime; 
+            rotation.x += -mouse.y * Time.deltaTime;
+            //rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
+
+            /*Vector3 rot = new Vector3(
+                0f,
+                rotation.x,
+                0f
+            );
+
             look.Send( 
                 Time.deltaTime,
-                Vector3.zero//controls.Mouse.GetLook()
-            );
+                rot
+            );*/
+
+            // So the bug is here ~ have fun with that :/
+                // Remember you added a SPINE IK too so that's why the ribcage is acting weird
         }
     }
 }
