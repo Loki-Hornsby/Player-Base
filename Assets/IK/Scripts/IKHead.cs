@@ -20,9 +20,6 @@ namespace IK {
         [Header("List o' Necks")]
         public List<IKNeck> Necks;
 
-        /// <summary>
-        /// Send data to this script
-        /// </summary>
         public void Send(IKHead head, Vector3 rotation){
             for (int i = 0; i < Necks.Count; i++){
                 Necks[i].Update(head, rotation);

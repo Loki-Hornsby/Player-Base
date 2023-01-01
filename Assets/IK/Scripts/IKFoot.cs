@@ -20,13 +20,17 @@ namespace IK {
         [Header("References")]
         public IKJoints joints;
 
-        // Animation
-        [System.NonSerialized] public Vector3 walkAnim;
+        // Target the foot needs to reach
+        Vector3 goal;
 
+        // Last recorded position when new goal position was calculated
+        Vector3 lastPos;
+       
+        /*
         /// <summary>
         /// Calculate averages between 2 raycasts
         /// </summary>
-        public Vector3 CalculateRaycastAverage(
+        Vector3 CalculateRaycastAverage(
             int i, LayerMask RaycastLayers, float RaycastDistance, float RaycastTipForward, float RaycastOriginForward){
 
             // Transform References
@@ -70,7 +74,7 @@ namespace IK {
         /// <summary>
         /// Calculate target position
         /// </summary>
-        public Vector3 CalculateTargetPosition(Vector3 walk, Vector3 avg){
+        Vector3 CalculateTargetPosition(Vector3 walk, Vector3 avg){
             // Foot Walk Cycle Animation (F.W.C.A ~ O.W.C.A anyone?)
             Vector3 min = avg;
             Vector3 max = min + walk;
@@ -84,29 +88,79 @@ namespace IK {
         /// <summary>
         /// Get result from walk cycle animation formula
         /// </summary>
-        public Vector3 CalculateWalkAnimResult(IKFeet feet, int index){
+        Vector3 CalculateWalkAnimResult(IKFeet feet, int index){
             return ( // Calculates walk motion (produces a kind of circle shape)
                 new Vector3( 
-                    0f,
                     Unitilities.Maths.CalculateSinOrCos(
                         feet.speed, feet.amplitude, false),
                     Unitilities.Maths.CalculateSinOrCos(
-                        feet.speed, feet.amplitude, true) * -1f
+                        feet.speed, feet.amplitude, true) * -1f,
+                    0f
 
                 ) * ((index % 2f == 0f) ? 1f : -1f) // Allows the player to moonwalk haha!
             );
+        }*/
+
+        /// <summary>
+        /// Calculate a new goal position
+        /// </summary>
+        Vector3 CalculateNewGoal(Vector3 pos, Vector3 offset){
+            lastPos = pos;
+            return pos + offset;
+        }
+
+        /// <summary>
+        /// Calculate target position
+        /// </summary>
+        Vector3 CalculateTarget(int i, float t, Vector3 velocity){
+            // Test
+            float max = 5f;
+            float min = 0.125f;
+            float height = 0.25f;
+
+            // Current position of target
+            Vector3 current_target_pos = joints.GetTargetPosition(i);
+
+            // Current transform of reference
+            Transform reference_transform = joints.GetReferenceTransform(i);
+
+            // Distance from body to goal
+            float CurrentDistance = Vector3.Distance(reference_transform.position, goal);
+
+            // Recalculate goal
+            if (CurrentDistance > max || CurrentDistance < min || goal == Vector3.zero) goal = CalculateNewGoal(
+                reference_transform.position, 
+                reference_transform.forward * max //reference_transform.forward * max //velocity
+            );
+
+            // Animation Curve
+            if (CurrentDistance > min){
+                // Distance from original position to goal
+                float OriginDistance = Vector3.Distance(lastPos, goal);
+
+                //Debug.Log((CurrentDistance / OriginDistance));
+                Debug.Log((1f + Mathf.PingPong((CurrentDistance / OriginDistance), 10f)));
+
+                // Curve in wanted direction towards goal
+                return Unitilities.Maths.GetCurve(
+                    lastPos, 
+                    goal, 
+                    -reference_transform.up,
+                    height, 
+                    (CurrentDistance / OriginDistance)
+                );
+            } else {
+                return current_target_pos;
+            }
         }
 
         /// <summary>
         /// Update Joint
         /// </summary>
-        public void Update(IKFeet feet, int index, float t){
+        public void Update(IKFeet feet, int index, float t, Vector3 velocity){
             for (int i = 0; i < joints.GetJoints(); i++){
-                // Calculate Animations
-                walkAnim = CalculateWalkAnimResult(feet, index);
-            
                 // Target
-                Vector3 target = CalculateTargetPosition(
+                /*Vector3 target = CalculateTargetPosition(
                     walkAnim,
 
                     CalculateRaycastAverage(
@@ -116,7 +170,11 @@ namespace IK {
                         feet.RaycastTipForward,
                         feet.RaycastOriginForward
                     )
-                );
+                );*/
+
+                Vector3 target = CalculateTarget(i, t, velocity);
+
+                Debug.DrawLine(Vector3.zero, target, Color.red, 0.1f);
 
                 // Hint
                 Vector3 hint = joints.GetHintPosition(i);

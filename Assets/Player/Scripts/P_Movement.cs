@@ -40,10 +40,10 @@ namespace Player {
         /// </summary>
         public void Send(float t, Vector2 move, bool jump, bool crouch, bool run){
             // Movement
-            velocity = (move.x * this.transform.forward) + (move.y * this.transform.right);
+            velocity = (move.x * this.transform.forward) + (move.y * -this.transform.right);
 
             // Feet
-            feet.Send(move.y, move.y);
+            feet.Send(velocity);
 
             // Apply
             cont.Move(velocity * speed * t);

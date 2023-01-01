@@ -17,10 +17,6 @@ using UnityEngine.Animations.Rigging;
 namespace IK {
     [RequireComponent(typeof(Rig))]
     public class IKFeet : MonoBehaviour {
-        [Header("Configuration")]
-        public float speed;
-        public float amplitude;
-
         [Header("Raycast")]
         public LayerMask RaycastLayers;
         public float RaycastDistance;
@@ -30,34 +26,10 @@ namespace IK {
         [Header("List o' Feet")]
         public List<IKFoot> Feet;
 
-        /// <summary>
-        /// Update Feet
-        /// </summary>
-        void Update(){
+        public void Send(Vector3 velocity){
             for (int i = 0; i < Feet.Count; i++){
-                Feet[i].Update(this, i, Time.deltaTime);
+                Feet[i].Update(this, i, Time.deltaTime, velocity);
             }
-        }
-
-        /// <summary>
-        /// Send data to this script
-        /// </summary>
-        public void Send(float _speed, float _amplitude){
-            speed = _speed;
-            amplitude = _amplitude;
-        }
-
-        /// <summary>
-        /// Get Walk Animation Average
-        /// </summary>
-        public Vector3 GetWalkAnimAverage(){
-            Vector3 result = Vector3.zero;
-
-            foreach (var foot in Feet){
-                result = result + foot.walkAnim;
-            }
-
-            return result;
         }
     }
 }
