@@ -17,14 +17,14 @@ using UnityEngine.Animations.Rigging;
 namespace IK {
     [RequireComponent(typeof(Rig))]
     public class IKFeet : MonoBehaviour {
-        [Header("Raycast")]
+        [Header("List o' Feet")]
+        public List<IKFoot> Feet;
+
+        [Header("Configuration")]
         public LayerMask RaycastLayers;
         public float RaycastDistance;
         public float RaycastTipForward;
         public float RaycastOriginForward;
-
-        [Header("List o' Feet")]
-        public List<IKFoot> Feet;
 
         public void Send(Vector3 velocity){
             for (int i = 0; i < Feet.Count; i++){

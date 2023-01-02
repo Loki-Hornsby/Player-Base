@@ -20,11 +20,22 @@ namespace IK {
         [Header("References")]
         public IKJoints joints;
 
+        [Header("Configuration")]
+        public float max;
+        public float height;
+        public Vector2 duration;
+
         // Target the foot needs to reach
         Vector3 goal;
 
         // Last recorded position when new goal position was calculated
         Vector3 lastPos;
+
+        // Animation timer
+        Vector2 at;
+
+        // Animation is playing
+        bool playing;
        
         /*
         /// <summary>
@@ -105,7 +116,6 @@ namespace IK {
         /// Calculate a new goal position
         /// </summary>
         Vector3 CalculateNewGoal(Vector3 pos, Vector3 offset){
-            lastPos = pos;
             return pos + offset;
         }
 
@@ -113,45 +123,61 @@ namespace IK {
         /// Calculate target position
         /// </summary>
         Vector3 CalculateTarget(int i, float t, Vector3 velocity){
-            // Test
-            float max = 5f;
-            float min = 0.125f;
-            float height = 0.25f;
-
-            // Current position of target
-            Vector3 current_target_pos = joints.GetTargetPosition(i);
+            // Animation is playing
+            if (at.x < 1f || at.y < 1f){
+                playing = true;
+            } else {
+                playing = false;
+            }
 
             // Current transform of reference
             Transform reference_transform = joints.GetReferenceTransform(i);
+           
+            // So long as the animation isn't playing we can create new goals
+            if (!playing){
+                // Current position of target
+                Vector3 current_target_pos = joints.GetTargetPosition(i);
 
-            // Distance from body to goal
-            float CurrentDistance = Vector3.Distance(reference_transform.position, goal);
+                // Distance from body to  current goal
+                float CurrentDistance = Vector3.Distance(reference_transform.position, goal);
 
-            // Recalculate goal
-            if (CurrentDistance > max || CurrentDistance < min || goal == Vector3.zero) goal = CalculateNewGoal(
-                reference_transform.position, 
-                reference_transform.forward * max //reference_transform.forward * max //velocity
-            );
+                // Distance from previous goal to body
+                float LastDistance = Vector3.Distance(lastPos, reference_transform.position);
 
-            // Animation Curve
-            if (CurrentDistance > min){
-                // Distance from original position to goal
-                float OriginDistance = Vector3.Distance(lastPos, goal);
+                // Recalculate goal and reset lerp timer
+                if (CurrentDistance > max && LastDistance > CurrentDistance || goal == Vector3.zero){
+                    // Reset animation timer
+                    at = Vector2.zero;
 
-                //Debug.Log((CurrentDistance / OriginDistance));
-                Debug.Log((1f + Mathf.PingPong((CurrentDistance / OriginDistance), 10f)));
+                    // Record current goal position
+                    lastPos = new Vector3(
+                        goal.x,
+                        goal.y,
+                        goal.z
+                    );
 
-                // Curve in wanted direction towards goal
-                return Unitilities.Maths.GetCurve(
-                    lastPos, 
-                    goal, 
-                    -reference_transform.up,
-                    height, 
-                    (CurrentDistance / OriginDistance)
-                );
+                    // Create a new goal position
+                    goal = CalculateNewGoal(
+                        new Vector3(
+                            reference_transform.position.x,
+                            0f,
+                            reference_transform.position.z
+                        ), 
+                        reference_transform.forward * max
+                    );
+                }
             } else {
-                return current_target_pos;
+                // increment animation timer
+                at += new Vector2(t / duration.x, t / duration.y);
             }
+
+            // Curve in wanted direction towards goal
+            return Unitilities.Maths.GetCurve(
+                lastPos, 
+                goal, 
+                reference_transform.up * height,
+                at
+            );
         }
 
         /// <summary>

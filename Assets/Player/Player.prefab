@@ -3851,15 +3851,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b417e5cc6fc7c9c41935ec859783450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Feet:
+  - joints: {fileID: 1910155827450073544}
+    max: 2
+    height: 1.75
+    duration: {x: 1, y: 1}
+  - joints: {fileID: 1910155827414609348}
+    max: 2
+    height: 1.75
+    duration: {x: 1, y: 1}
   RaycastLayers:
     serializedVersion: 2
     m_Bits: 8
   RaycastDistance: 5
   RaycastTipForward: 0.2
   RaycastOriginForward: 0.1
-  Feet:
-  - joints: {fileID: 1910155827450073544}
-  - joints: {fileID: 1910155827414609348}
 --- !u!114 &7640831703246275613
 MonoBehaviour:
   m_ObjectHideFlags: 0

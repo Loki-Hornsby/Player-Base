@@ -9,7 +9,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-// Version: 31.12.22 (4)
+// Version: 02.01.23 (1)
 
 public static class Unitilities {
     public static class Probability {
@@ -66,11 +66,11 @@ public static class Unitilities {
     }
 
     public static class Maths {
-        public static Vector3 GetCurve(Vector3 start, Vector3 end, Vector3 direction, float height, float percentage){
+        public static Vector3 GetCurve(Vector3 start, Vector3 end, Vector3 heightdir, Vector2 t){
             return Vector3.Lerp(
                 start,
-                end + (direction * (1f + Mathf.PingPong(percentage, height))),
-                percentage
+                end + (heightdir * Mathf.PingPong(t.x * 2f, 1f)),
+                t.y
             );
         }
 
