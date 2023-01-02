@@ -28,7 +28,7 @@ namespace IK {
 
         public void Send(Vector3 velocity){
             for (int i = 0; i < Feet.Count; i++){
-                Feet[i].Update(this, i, Time.deltaTime, velocity);
+                Feet[i].Update(this, Time.deltaTime, velocity);
             }
         }
     }

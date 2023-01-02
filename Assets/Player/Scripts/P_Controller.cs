@@ -13,35 +13,37 @@ using UnityEngine;
 /// </summary>
 
 namespace Player {  
+    [RequireComponent(typeof(P_Movement))]
+    [RequireComponent(typeof(P_Look))]
     [RequireComponent(typeof(P_Controls))]
     public class P_Controller : MonoBehaviour {
-        [Header("References")]
-        public P_Movement movement;
-        public P_Look look;
-   
-        P_Controls controls;
+        // Movement
+        P_Movement movement;
+        public float speed;
 
-        // Look
+        // Look 
+        P_Look look;
         Vector2 rotation;
+
+        // Controls
+        P_Controls controls;
         
         void Start(){
+            movement = GetComponent<P_Movement>();
+            look = GetComponent<P_Look>();
             controls = GetComponent<P_Controls>();
         }
 
         void Update(){
             // Update movement to movement script
             movement.Send(
-                Time.deltaTime,
-                controls.GetVelocity(), 
-                controls.GetJumping(), 
-                controls.GetCrouching(), 
-                controls.GetRunning()
+                controls.GetVelocity(this.transform, speed, Time.deltaTime)
             );
 
             // Update look to look script
-            Vector2 mouse = controls.GetMousePosition(false, Time.deltaTime);
-            rotation.y += mouse.x * Time.deltaTime; 
-            rotation.x += -mouse.y * Time.deltaTime;
+            //Vector2 mouse = controls.GetMousePosition(false, Time.deltaTime);
+            //rotation.y += mouse.x * Time.deltaTime; 
+            //rotation.x += -mouse.y * Time.deltaTime;
             //rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
 
             /*Vector3 rot = new Vector3(
@@ -54,9 +56,6 @@ namespace Player {
                 Time.deltaTime,
                 rot
             );*/
-
-            // So the bug is here ~ have fun with that :/
-                // Remember you added a SPINE IK too so that's why the ribcage is acting weird
         }
     }
 }

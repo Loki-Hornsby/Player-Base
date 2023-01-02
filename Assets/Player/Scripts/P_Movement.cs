@@ -21,32 +21,20 @@ namespace Player {
         public IKFeet feet;
         CharacterController cont;
 
-        [Header("Configuration")]
-        public float speed;
-        
-        // Velocity
-        [System.NonSerialized] public Vector3 velocity;
-
         void Start(){
             // References
             cont = GetComponent<CharacterController>();
-
-            // Velocity
-            velocity = Vector3.zero;
         }
 
         /// <summary>
         /// Applies physics to the player in terms of movement 
         /// </summary>
-        public void Send(float t, Vector2 move, bool jump, bool crouch, bool run){
-            // Movement
-            velocity = (move.x * this.transform.forward) + (move.y * -this.transform.right);
-
+        public void Send(Vector3 input){
             // Feet
-            feet.Send(velocity);
+            feet.Send(cont.velocity);
 
             // Apply
-            cont.Move(velocity * speed * t);
+            cont.Move(input);
 
             /*
             // Gravity

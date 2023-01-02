@@ -112,6 +112,8 @@ namespace Player {
             }
         }
 
+        // // ==================================== General ==================================== \\ \\
+
         [Header("Configuration")]
         public Walk walk;
         public Run run;
@@ -136,29 +138,8 @@ namespace Player {
             isAI = (AI != null);
         }
 
-        void Update(){
-            /*
-            // Get Mouse Pos
-            Vector2 mPos = PlayerControls.Mouse.GetMousePosition(false, Time.deltaTime);
-
-            // Left, Right
-            rotation.y += mPos.x; 
-            
-            // Up, Down
-            rotation.x += -mPos.y;
-            rotation.x = Mathf.Clamp(rotation.x, -180f * 1.5f, 180f * 1.5f);
-
-            // Apply
-            Head.transform.eulerAngles = original * look.sensitivity;
-            transform.eulerAngles = new Vector3(
-                transform.eulerAngles.x, 
-                rotation.y, 
-                transform.eulerAngles.z
-            ) * look.sensitivity;
-            */
-        }
-
         // // ==================================== Mouse ==================================== \\ \\
+
         int reset;
 
         bool ResetCheck(){
@@ -210,7 +191,8 @@ namespace Player {
         }
 
         // // ==================================== Movement ==================================== \\ \\
-        public Vector2 GetAxis(float mult = 1f){
+
+        Vector2 GetAxis(float mult = 1f){
             if (isAI){
                 return AI.axis * mult;
             } else {
@@ -218,7 +200,7 @@ namespace Player {
             }
         }
 
-        public bool GetJumping(){
+        bool GetJumping(){
             if (isAI){
                 return AI.isJumping; 
             } else {
@@ -226,7 +208,7 @@ namespace Player {
             }
         }
 
-        public bool GetCrouching(){
+        bool GetCrouching(){
             if (isAI){
                 return AI.isCrouching;
             } else {
@@ -234,7 +216,7 @@ namespace Player {
             }
         }
 
-        public bool GetRunning(){
+        bool GetRunning(){
             if (isAI){
                 return AI.isRunning;
             } else {
@@ -242,16 +224,24 @@ namespace Player {
             }
         }
 
-        public Vector2 GetVelocity(){
-            return GetAxis(
+        public Vector3 GetVelocity(Transform transform, float speed, float t){
+            Vector2 axis = GetAxis(
                 GetRunning() ? 
-                    1f 
+                    speed * 2f 
                     : 
                     GetCrouching() ?
-                        0.25f
+                        speed / 2f
                         :
-                        0.5f
+                        speed
             ); 
+
+            Vector3 velocity = (
+                (axis.x * transform.forward) +
+                (((GetJumping()) ? 1f : 0f) * transform.up) +
+                axis.y * transform.right
+            ) * t;
+
+            return velocity;
         }
     }
 }
