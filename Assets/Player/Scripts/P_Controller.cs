@@ -19,24 +19,18 @@ namespace Player {
     [RequireComponent(typeof(P_Look))]
     public class P_Controller : MonoBehaviour {
         [Header("Movement")]
+        public P_Movement movement;
         public float MovementSpeed;
-
-        P_Movement movement;
         
         [Header("Look")]
+        public P_Look look;
         public float LookSpeed;
         Vector2 rotation;
-
-        P_Look look;
 
         [Header("AI (Optional)")]
         public AIControls? AI;
         
         void Start(){
-            // References
-            movement = GetComponent<P_Movement>();
-            look = GetComponent<P_Look>();
-
             // Lock Mouse
             P_ControlsLib.Mouse.LockMouse();
         }

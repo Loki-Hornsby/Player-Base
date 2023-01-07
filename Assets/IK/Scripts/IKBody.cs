@@ -14,31 +14,29 @@ using Player;
 /// <summary>
 /// This is the <root> body of the IK system
 /// It handles <fetching> and <updating> of my IK scripts using <IKPass.cs>
+/// I am convinced this is the incorrect way to do all this but hay i'm testing - even if its wrong it helps me learn!
+/// </summary>
+
+/// <summary>
+/// Order of operation
+/// <IKBody.cs> -(Creates)-> <IKChild.cs> -(Creates)-> <IK2_*.cs> <and> <IKJoint.cs>
 /// </summary>
 
 namespace IK {
     public class IKBody : MonoBehaviour {
         // Config
         public IKChild[] children;
-
-        void Start(){
-            foreach (var child in children)
-                // typeof(IKJoints), typeof(IKFoot)
-                child.list = IKPass.FindAndCreate(
-                    child.Container.GetComponent<MonoBehaviour>(), 
-                    child.GetFind(), 
-                    child.GetCreate()
-            );
+        
+        public void Start(){
+            // Update every child of children once (Setup each child)
+            foreach (var child in children){
+                child.Setup();
+            }
         }
 
-        public void IKUpdate(){
-            foreach (var child in children){
-                // Update the foots (yes i know its "feet" but naming consistency for my sake and all that)
-                /*if (child.Container != null) IKPass.IKUpdate(
-                    this, // Mono
-                    feet, // Items
-                    this.transform, child.P_Script.direction, Time.deltaTime // Variables
-                );*/
+        public void Update(){
+            foreach(var child in children){
+                child.Update();
             }
         }
     }

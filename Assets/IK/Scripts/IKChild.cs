@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.Animations.Rigging;
+using Player;
 
 /// <summary>
 /// This is a child of the IKBody
@@ -16,15 +17,16 @@ using UnityEngine.Animations.Rigging;
 
 namespace IK {
     public enum IKTypes {
-        Foot
+        Feet
     }
 
     [Serializable]
     public class IKChild {
         [Header("General")]
+        public P_Controller controller;
         public IKTypes Type;
         public Transform Container;
-        [System.NonSerialized] public dynamic[] list;
+        dynamic[] joints;
 
         [Header("Raycast")]
         public LayerMask RaycastLayers;
@@ -39,26 +41,80 @@ namespace IK {
         public float range;
         public Vector2 duration;
 
-
         /// <summary>
-        /// Return the type for the body to find
+        /// Return the desired IK2 script
         /// </summary>
-        public System.Type GetFind(){
-            switch (Type){
-                default:
-                    return typeof(IKJoints);
-                    break;
+        public System.Type GetIK2_Script(){
+             switch (Type){
+                case IKTypes.Feet: // Feet
+                    return typeof(IK2Foot);
+
+                default: 
+                    return null;
             }
         }
 
         /// <summary>
-        /// Return the type for the body to create
+        /// Return the desired player script
         /// </summary>
-        public System.Type GetCreate(){
+        public System.Type GetP_Script(){
             switch (Type){
-                default:
-                    return typeof(IKFoot);
-                    break;
+                case IKTypes.Feet: // Feet
+                    return typeof(P_Movement);
+
+                default: 
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Return the desired parameters
+        /// </summary>
+        dynamic[] GetParams(P_Controller controller){
+            switch (Type){
+                default: // Feet
+                    return new dynamic[]{ 
+                        this, 
+                        //controller.movement, 
+                        Time.deltaTime 
+                    };
+            }
+        }
+
+        /// <summary>
+        /// Setup the child
+        /// </summary>
+        public void Setup(){
+            // Define types we want to find and create
+            System.Type find = typeof(TwoBoneIKConstraint); 
+            System.Type create = typeof(IKJoint); 
+            
+            // Find the components and arguments we want
+            dynamic[] child_components = IKHelpers.Find(Container.GetComponent<MonoBehaviour>(), find);
+            dynamic[] child_args = GetParams(controller);
+
+            // Create joins array
+            joints = new dynamic[child_components.Length];
+
+            // Iterate through the components
+            for (int i = 0; i < joints.Length; i++){
+                /// form a new class of type <create> and pass our <child_components> and <child_args> to it
+                joints[i] = IKHelpers.Create(
+                    ref create, // Class to create
+                    child_components[i], // Component
+                    child_args // Arguments
+                );
+            }
+        }
+        
+        /// <summary>
+        /// Update the child
+        /// </summary>
+        public void Update(){
+            if (joints != null){
+                foreach (var joint in joints) {
+                    if (joint.setup) joint.Update();
+                }
             }
         }
     }
