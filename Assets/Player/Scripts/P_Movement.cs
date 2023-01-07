@@ -11,15 +11,18 @@ using UnityEngine;
 using IK;
 
 /// <summary>
-/// P_Controls.cs <-- P_Controller.cs <-- * P_Movement.cs * --> IKFoot.cs --> IKFeet.cs --> IKJoints.cs
-/// </summary> 
+/// This script handles movement of the player
+/// </summary>
 
 namespace Player {
     [RequireComponent(typeof(CharacterController))]
     public class P_Movement : MonoBehaviour {
-        [Header("References")]
-        public IKFeet feet;
+        // Components
         CharacterController cont;
+
+        // Physics
+        [System.NonSerialized] public Vector3 direction;
+        [System.NonSerialized] public Vector3 velocity;
 
         void Start(){
             // References
@@ -29,12 +32,13 @@ namespace Player {
         /// <summary>
         /// Applies physics to the player in terms of movement 
         /// </summary>
-        public void Send(Vector3 input){
-            // Feet
-            feet.Send(cont.velocity);
+        public void Send(Vector3 _velocity, Vector3 _direction){
+            // Assign
+            velocity = _velocity;
+            direction = _direction;
 
             // Apply
-            cont.Move(input);
+            cont.Move(velocity);
 
             /*
             // Gravity

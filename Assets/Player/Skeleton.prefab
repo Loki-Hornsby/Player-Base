@@ -1724,12 +1724,11 @@ GameObject:
   - component: {fileID: 3584747302710722067}
   - component: {fileID: 5665751382296792727}
   - component: {fileID: 8124473648272375277}
-  - component: {fileID: 3782047217907407613}
   - component: {fileID: 747642594}
   - component: {fileID: 7576619035969771761}
   - component: {fileID: 3782047217907407610}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,19 +1891,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3782047217907407613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584747302710722064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e140756269c7c44ea54eb2d889a165b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AI: {fileID: 0}
 --- !u!114 &747642594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,7 +1929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db119eed7d2910d438e2a6afc34a2c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  MovementSpeed: 2.5
+  LookSpeed: 2.5
+  AI: {fileID: 0}
 --- !u!1 &3606841728715461992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,21 +3807,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feet:
   - joints: {fileID: 1910155827450073544}
-    distance: 1
-    height: 2
-    range: 1
-    duration: {x: 2.5, y: 2.5}
   - joints: {fileID: 1910155827414609348}
-    distance: 1
-    height: 2
-    range: 1
-    duration: {x: 1, y: 1}
   RaycastLayers:
     serializedVersion: 2
     m_Bits: 8
   RaycastDistance: 5
-  RaycastTipForward: 0.2
-  RaycastOriginForward: 0.1
+  distance: 1
+  height: 2
+  range: 0.5
+  duration: {x: 2, y: 2}
 --- !u!114 &7640831703246275613
 MonoBehaviour:
   m_ObjectHideFlags: 0

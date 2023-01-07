@@ -8,36 +8,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using AI;
+
 /// <summary>
-/// P_Controls.cs <-- * P_Controller.cs * --> P_*.cs --> IK*.cs --> IK*.cs --> IKJoints.cs
+/// This script handles coordination of P_Scripts (Player Scripts)
 /// </summary>
 
 namespace Player {  
     [RequireComponent(typeof(P_Movement))]
     [RequireComponent(typeof(P_Look))]
-    [RequireComponent(typeof(P_Controls))]
     public class P_Controller : MonoBehaviour {
-        // Movement
-        P_Movement movement;
-        public float speed;
+        [Header("Movement")]
+        public float MovementSpeed;
 
-        // Look 
-        P_Look look;
+        P_Movement movement;
+        
+        [Header("Look")]
+        public float LookSpeed;
         Vector2 rotation;
 
-        // Controls
-        P_Controls controls;
+        P_Look look;
+
+        [Header("AI (Optional)")]
+        public AIControls? AI;
         
         void Start(){
+            // References
             movement = GetComponent<P_Movement>();
             look = GetComponent<P_Look>();
-            controls = GetComponent<P_Controls>();
+
+            // Lock Mouse
+            P_ControlsLib.Mouse.LockMouse();
         }
 
         void Update(){
-            // Update movement to movement script
+            // Get axis
+            Vector3 axis = P_ControlsLib.Movement.GetAxis(AI);
+
+            // Calculate direction of travel
+            Vector3 direction = P_ControlsLib.Movement.CalculateDirection(axis, this.transform);
+
+            // Calculate speed
+            float speed = P_ControlsLib.Movement.CalculateSpeed(AI, MovementSpeed);
+
+            // Calculate wanted velocity
+            Vector3 velocity = P_ControlsLib.Movement.CalculateVelocity(direction, speed, Time.deltaTime);  
+
+            // Send variables to movement script
             movement.Send(
-                controls.GetVelocity(this.transform, speed, Time.deltaTime)
+                velocity,
+                direction
             );
 
             // Update look to look script
