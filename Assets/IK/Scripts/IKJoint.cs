@@ -8,8 +8,9 @@ using UnityEngine.Animations.Rigging;
 namespace IK {
     [Serializable]
     public class IKJoint {
-        [System.NonSerialized] public bool setup;
         [System.NonSerialized] public TwoBoneIKConstraint constraint;
+
+        bool setup;
         dynamic IK2;
         
         /// <summary>
@@ -26,7 +27,7 @@ namespace IK {
             System.Type create = child.GetIK2_Script();
 
             // Create instance
-            IK2 = IKHelpers.Create(ref create, parameters); 
+            IK2 = IKHelpers.Create(ref create, this, parameters);
 
             // Use the MonoBehaviour from the constraint to setup our joint
             constraint.transform.GetComponent<MonoBehaviour>().StartCoroutine(Setup());
@@ -48,7 +49,8 @@ namespace IK {
         /// Update the IK2 this belongs to
         /// </summary>
         public void Update(){
-            IK2.Update(this);
+            // Only update if joint is setup and IK2 isn't null
+            if (setup) IK2.Update();
         }
     }
 }

@@ -13,13 +13,19 @@ using UnityEngine.Animations.Rigging;
 namespace IK {
     [Serializable]
     public class IK2Foot {
-        // References
+        // External refs
+        IKJoint joint;
+        TwoBoneIKConstraint constraint;
         IKChild child;
+
+        // Constraint refs
+        Transform root;
+        Transform mid;
+        Transform tip;
 
         // Animation
         Vector2 at; // animation timer
         bool playing; // is animation playing?
-        bool wasInRange; // was in foot in range of goal?
 
         // Target the foot needs to reach
         Vector3 goal;
@@ -31,19 +37,21 @@ namespace IK {
         /// Constructor
         /// </summary>
         public IK2Foot(params dynamic[] parameters){
-            // References
-            child = parameters[0];
+            // External refs
+            joint = parameters[0];
+            constraint = joint.constraint;
+            child = parameters[1][0];
+
+            // Constraint refs
+            root = constraint.data.root.transform;
+            mid = constraint.data.mid.transform;
+            tip = constraint.data.tip.transform;
         }
 
         /// <summary>
         /// Calculates raycast height to allow the foot to adhere to terrain
         /// </summary>
-        Vector3 CalculateRaycastHeight(TwoBoneIKConstraint constraint){
-            // Transform References
-            Transform root = constraint.data.root.transform;
-            Transform mid = constraint.data.mid.transform;
-            Transform tip = constraint.data.tip.transform;
-
+        Vector3 CalculateRaycastHeight(){
             // Raycast
             RaycastHit hit;
 
@@ -68,7 +76,10 @@ namespace IK {
         /// <summary>
         /// Calculate the foot's animation
         /// </summary>
-        Vector3 CalculateAnimation(TwoBoneIKConstraint constraint, Vector3 direction){
+        Vector3 CalculateAnimation(){
+            // Direction
+            Vector3 direction = child.controller.movement.direction;
+
             // Animation is playing
             if (at.x < 1f || at.y < 1f){
                 playing = true;
@@ -76,32 +87,38 @@ namespace IK {
                 playing = false;
             }
 
-            // Position of body
-            Vector3 bodyPos = constraint.transform.position;
-            bodyPos.y = 0f; // Set the y to 0 since we don't need to track height since the raycast takes care of this (for now atleast)
-           
+            // Root position
+            Vector3 X = root.position;
+            X.y = 0f;
+
+            // Tip position
+            Vector3 Y = tip.position;
+            Y.y = 0f;
+
             // So long as the animation isn't playing we can create new goals
             if (!playing){
-                // Distance from body to current goal
-                float CurrentDistance = Vector3.Distance(bodyPos, goal);
+                // Distance from X to Y
+                float CurrentDistance = Vector3.Distance(X, Y);
 
-                // body is in range?
-                if (!wasInRange) wasInRange = (CurrentDistance < child.range/4f); 
+                // Dot
+                float dot = Unitilities.Maths.GetDotProduct(X, Y, direction);
 
                 // Recalculate goal
                     // Moved away from goal after getting into range of it
                     // Goal hasn't been set yet (Will cause "bouncing" behaviour of foot)
                     // Body moved too far away from goal (need improvement)
-                if (CurrentDistance > child.range && wasInRange || goal == Vector3.zero || CurrentDistance > child.range * 2f){
-                    // Record current goal position
-                    lastPos = new Vector3(
-                        goal.x,
-                        goal.y,
-                        goal.z
-                    );
+                if (goal == Vector3.zero || CurrentDistance > child.back){
+                    if (Mathf.Ceil(dot) >= Mathf.Ceil(direction.normalized.magnitude)){
+                        // Record current goal position
+                        lastPos = new Vector3(
+                            goal.x,
+                            goal.y,
+                            goal.z
+                        );
 
-                    // Reset animation timer
-                    at = Vector2.zero;
+                        // Reset animation timer
+                        at = Vector2.zero;
+                    }
                 }
             } else {
                 // increment animation timer
@@ -111,10 +128,7 @@ namespace IK {
                 );
 
                 // Assign a new goal position
-                goal = bodyPos + (direction * child.distance);
-
-                // goal is no longer in range
-                wasInRange = false;
+                goal = X + (direction * child.forward);
             }
 
             // Curve in wanted direction towards goal (adding the raycast to it as well)
@@ -123,9 +137,7 @@ namespace IK {
                 goal, 
                 constraint.transform.up * child.height,
                 at
-            ) + CalculateRaycastHeight(
-                constraint
-            );
+            ) + CalculateRaycastHeight();
 
             return curve;
         }
@@ -133,19 +145,14 @@ namespace IK {
         /// <summary>
         /// Update Joint
         /// </summary>
-        public void Update(IKJoint joint){
-            TwoBoneIKConstraint constraint = joint.constraint;
-
+        public void Update(){
             // Target
-            joint.constraint.data.target.transform.position = CalculateAnimation(
-                constraint,
-                child.controller.movement.direction
-            ); // (Not working!?)
+            constraint.data.target.transform.position = CalculateAnimation();
 
             // Hint
-            joint.constraint.data.hint.transform.position = joint.constraint.data.target.transform.position;
+            constraint.data.hint.transform.position = constraint.data.target.transform.position + (constraint.transform.forward * 10f);
 
-            Debug.DrawLine(joint.constraint.data.target.transform.position, Vector3.zero, Color.red, 0.01f);
+            Debug.DrawLine(constraint.data.target.transform.position, Vector3.zero, Color.red, 0.01f);
         }
     }
 }

@@ -32,13 +32,10 @@ namespace IK {
         public LayerMask RaycastLayers;
         public float RaycastDistance;
 
-        [Header("Animation")]
-        [Header("Curve")]
-        public float distance;
+        [Header("Animation Curve")]
+        public float forward;
+        public float back;
         public float height;
-        
-        [Header("Settings")]
-        public float range;
         public Vector2 duration;
 
         /// <summary>
@@ -46,11 +43,8 @@ namespace IK {
         /// </summary>
         public System.Type GetIK2_Script(){
              switch (Type){
-                case IKTypes.Feet: // Feet
+                default: // Feet
                     return typeof(IK2Foot);
-
-                default: 
-                    return null;
             }
         }
 
@@ -59,11 +53,8 @@ namespace IK {
         /// </summary>
         public System.Type GetP_Script(){
             switch (Type){
-                case IKTypes.Feet: // Feet
+                default: // Feet
                     return typeof(P_Movement);
-
-                default: 
-                    return null;
             }
         }
 
@@ -74,9 +65,7 @@ namespace IK {
             switch (Type){
                 default: // Feet
                     return new dynamic[]{ 
-                        this, 
-                        //controller.movement, 
-                        Time.deltaTime 
+                        this
                     };
             }
         }
@@ -113,7 +102,7 @@ namespace IK {
         public void Update(){
             if (joints != null){
                 foreach (var joint in joints) {
-                    if (joint.setup) joint.Update();
+                    joint.Update();
                 }
             }
         }

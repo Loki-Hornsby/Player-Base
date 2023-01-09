@@ -2201,9 +2201,9 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 1
     RaycastDistance: 5
-    distance: 1
-    height: 1
-    range: 1
+    forward: 0.75
+    back: 0.125
+    height: 2
     duration: {x: 1, y: 1}
 --- !u!1 &4952749169917630843
 GameObject:

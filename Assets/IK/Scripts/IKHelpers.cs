@@ -16,7 +16,7 @@ namespace IK {
         /// Create an instance of a type dynamically and pass arguments to it
         /// </summary>
         public static dynamic Create(ref System.Type create, params dynamic[] parameters){
-            return Activator.CreateInstance(create, parameters) as dynamic; 
+            return Activator.CreateInstance(create, parameters) as dynamic; // new IKJoint(parameters)
         }
     }
 }

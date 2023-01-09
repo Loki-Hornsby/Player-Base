@@ -9,7 +9,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-// Version: 06.01.23
+// Version: 09.01.23
 
 public static class Unitilities {
     public static class Probability {
@@ -67,15 +67,6 @@ public static class Unitilities {
         }
     }
 
-    public static class Distance {
-        /// <summary>
-        /// Check the distance between 2 floats
-        /// </summary>
-        public static float Between2Floats(float a, float b){
-            return Mathf.Abs(Mathf.Abs(a) - Mathf.Abs(b));
-        }
-    }
-
     public static class Trigger {
         /// <summary>
         /// Queries if layer is in selected Layer Mask
@@ -86,6 +77,27 @@ public static class Unitilities {
     }
 
     public static class Maths {
+        /// <summary>
+        /// Check the distance between 2 floats
+        /// </summary>
+        public static float DistanceBetween2Floats(float a, float b){
+            return Mathf.Abs(Mathf.Abs(a) - Mathf.Abs(b));
+        }
+
+        /// <summary>
+        /// https://forum.unity.com/threads/how-do-i-detect-if-an-object-is-in-front-of-another-object.53188/
+        /// Check where a target is in relation to an npc
+        /// -1 if the target is directly behind
+        /// +1 if directly ahead
+        /// 0 if it is side-on to the NPC
+        /// </summary>
+        public static float GetDotProduct(Vector3 target, Vector3 npc, Vector3 direction){
+            Vector3 heading = (target - npc).normalized;
+            float dot = Vector3.Dot(heading, direction);
+
+            return dot;
+        }
+
         /// <summary>
         /// Simulate a curve
         /// </summary>
